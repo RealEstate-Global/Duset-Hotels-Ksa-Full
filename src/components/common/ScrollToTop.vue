@@ -21,22 +21,40 @@ const measureMaxScroll = () => {
 }
 
 // Only cheap reads (scrollY) happen per scroll frame; the layout-affecting
-// scrollHeight read is cached and refreshed on resize/after mount.
+// scrollHeight read is cached and refreshed on resize, after mount, and via
+// ResizeObserver when the document size changes (e.g. async sections resolve).
 const update = () => {
   const max = maxScroll.value
   progress.value = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
   visible.value = window.scrollY > SHOW_AFTER_PX
 }
 
-let ticking = false
+let scrollTicking = false
 const onScroll = () => {
-  if (ticking) return
-  ticking = true
+  if (scrollTicking) return
+  scrollTicking = true
   window.requestAnimationFrame(() => {
-    ticking = false
+    scrollTicking = false
     update()
   })
 }
+
+// Async sections (code-split chunks) can grow the document after the initial
+// measurement. ResizeObserver fires post-layout, so re-caching maxScroll here
+// does not force synchronous reflows. Coalesced through rAF as well. Kept on
+// its own flag so a pending scroll rAF can never swallow a size re-measure.
+let sizeTicking = false
+const handleSizeChange = () => {
+  if (sizeTicking) return
+  sizeTicking = true
+  window.requestAnimationFrame(() => {
+    sizeTicking = false
+    measureMaxScroll()
+    update()
+  })
+}
+
+let resizeObserver: ResizeObserver | undefined
 
 const onResize = () => {
   measureMaxScroll()
@@ -55,9 +73,15 @@ onMounted(() => {
   })
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('resize', onResize, { passive: true })
+  if (typeof ResizeObserver !== 'undefined') {
+    resizeObserver = new ResizeObserver(handleSizeChange)
+    resizeObserver.observe(document.documentElement)
+    resizeObserver.observe(document.body)
+  }
 })
 
 onBeforeUnmount(() => {
+  resizeObserver?.disconnect()
   window.removeEventListener('scroll', onScroll)
   window.removeEventListener('resize', onResize)
 })

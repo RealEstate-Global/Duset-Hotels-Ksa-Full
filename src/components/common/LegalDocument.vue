@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { Mail, MapPin } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 import { SITE } from '@/constants/site'
+import AppPageHeader from '@/components/common/AppPageHeader.vue'
 
 const props = defineProps<{ docKey: 'privacy-policy' | 'refund-policy' | 'terms-and-conditions' }>()
 const { t, tm } = useI18n()
@@ -25,15 +26,7 @@ const doc = computed(
 
 <template>
   <main class="pb-24 pt-[68px] md:pt-[104px]">
-    <section class="border-b border-border/70 bg-secondary/40 py-16 sm:py-20">
-      <div class="container-shell">
-        <p class="eyebrow">{{ doc.eyebrow }}</p>
-        <h1 class="display-title mt-4 text-h1" v-html="doc.title" />
-        <p v-if="doc.intro" class="mt-6 max-w-2xl text-body-md text-muted-foreground">
-          {{ doc.intro }}
-        </p>
-      </div>
-    </section>
+    <AppPageHeader :eyebrow="doc.eyebrow" :title="doc.title" :description="doc.intro" />
 
     <section class="container-shell max-w-4xl pt-14">
       <div class="space-y-10">

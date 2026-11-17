@@ -4,6 +4,7 @@ import { ArrowUpRight, ArrowRight } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 import { coreFeatures } from '@/data/amenities'
 import type { Room } from '../types/room.types'
+import AppChip from '@/components/common/AppChip.vue'
 
 const props = defineProps<{ room: Room }>()
 const { t, tm } = useI18n()
@@ -47,12 +48,8 @@ const content = computed(() => tm(`rooms.list.${props.room.id}`) as unknown as R
       <p class="mt-3 text-sm leading-6 text-muted-foreground">{{ content.description }}</p>
 
       <ul class="mt-4 flex flex-wrap gap-1.5">
-        <li
-          v-for="tag in content.tags"
-          :key="tag"
-          class="rounded-full bg-secondary px-3 py-1 text-[11px] font-semibold text-secondary-foreground"
-        >
-          {{ tag }}
+        <li v-for="tag in content.tags" :key="tag">
+          <AppChip>{{ tag }}</AppChip>
         </li>
       </ul>
 

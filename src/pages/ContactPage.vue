@@ -2,23 +2,14 @@
 import { Clock3, Mail, MapPin, MessageCircle, Phone, ArrowUpRight, ExternalLink } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 import { SITE } from '@/constants/site'
+import AppPageHeader from '@/components/common/AppPageHeader.vue'
 
 const { t } = useI18n()
 </script>
 
 <template>
   <main class="pb-24 pt-[68px] md:pt-[104px]">
-    <section class="border-b border-border/70 bg-secondary/40 py-16 sm:py-20">
-      <div class="container-shell flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-        <div>
-          <p class="eyebrow">{{ t('contact.eyebrow') }}</p>
-          <h1 class="display-title mt-4 text-h1" v-html="t('contact.title')" />
-        </div>
-        <p class="max-w-sm text-body-md text-muted-foreground">
-          {{ t('contact.subline') }}
-        </p>
-      </div>
-    </section>
+    <AppPageHeader :eyebrow="t('contact.eyebrow')" :title="t('contact.title')" :description="t('contact.subline')" />
 
     <section class="container-shell grid gap-10 pt-14 lg:grid-cols-[1fr_1.1fr]">
       <div class="space-y-4">

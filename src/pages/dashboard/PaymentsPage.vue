@@ -152,8 +152,8 @@ const makeDefault = (id: string) => {
                 inputmode="numeric"
                 autocomplete="cc-number"
                 :placeholder="t('dashboard.payments.cardNumberPlaceholder')"
-                class="payment-input ps-11"
-                :class="{ 'payment-input-error': errors.includes('number') }"
+                class="app-field ps-11"
+                :class="{ 'app-field-error': errors.includes('number') }"
                 dir="ltr"
                 @input="onNumberInput"
               />
@@ -167,8 +167,8 @@ const makeDefault = (id: string) => {
               type="text"
               autocomplete="cc-name"
               :placeholder="t('dashboard.payments.nameOnCardPlaceholder')"
-              class="payment-input mt-1.5"
-              :class="{ 'payment-input-error': errors.includes('name') }"
+              class="app-field mt-1.5"
+              :class="{ 'app-field-error': errors.includes('name') }"
               dir="ltr"
             />
           </div>
@@ -182,8 +182,8 @@ const makeDefault = (id: string) => {
                 inputmode="numeric"
                 autocomplete="cc-exp"
                 placeholder="MM / YY"
-                class="payment-input mt-1.5"
-                :class="{ 'payment-input-error': errors.includes('expiry') }"
+                class="app-field mt-1.5"
+                :class="{ 'app-field-error': errors.includes('expiry') }"
                 dir="ltr"
                 @input="onExpiryInput"
               />
@@ -198,8 +198,8 @@ const makeDefault = (id: string) => {
                 autocomplete="cc-csc"
                 placeholder="123"
                 maxlength="4"
-                class="payment-input mt-1.5"
-                :class="{ 'payment-input-error': errors.includes('cvv') }"
+                class="app-field mt-1.5"
+                :class="{ 'app-field-error': errors.includes('cvv') }"
                 dir="ltr"
               />
             </div>
@@ -227,35 +227,6 @@ const makeDefault = (id: string) => {
 </template>
 
 <style scoped>
-.payment-input {
-  width: 100%;
-  height: 48px;
-  border-radius: 0.85rem;
-  border: 1px solid hsl(var(--border) / 0.8);
-  background: hsl(var(--background) / 0.6);
-  padding: 0 1rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: hsl(var(--foreground));
-  outline: none;
-  transition:
-    border-color 200ms,
-    box-shadow 200ms,
-    background 200ms;
-}
-.payment-input::placeholder {
-  color: hsl(var(--muted-foreground) / 0.6);
-  font-weight: 400;
-}
-.payment-input:focus {
-  border-color: hsl(var(--accent) / 0.6);
-  background: hsl(var(--background));
-  box-shadow: 0 0 0 3px hsl(var(--accent) / 0.12);
-}
-.payment-input-error {
-  border-color: hsl(0 70% 55% / 0.6) !important;
-  box-shadow: 0 0 0 3px hsl(0 70% 55% / 0.12) !important;
-}
 .h-13 {
   height: 3.25rem;
 }

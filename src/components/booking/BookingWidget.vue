@@ -5,6 +5,9 @@ import { ArrowRight, BedDouble, CalendarDays, Users } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 import { rooms } from '@/features/rooms/data/rooms'
 import { isoDate } from '@/features/booking/dates'
+import AppSelect from '@/components/common/AppSelect.vue'
+import type { SelectOption } from '@/components/common/AppSelect.vue'
+import AppDatePicker from '@/components/common/AppDatePicker.vue'
 
 const { t, tm } = useI18n()
 const router = useRouter()
@@ -23,6 +26,16 @@ const roomName = (id: string) => {
   const entry = tm(`rooms.list.${id}`) as unknown as { name: string } | undefined
   return entry?.name ?? id
 }
+
+const roomOptions = computed<SelectOption[]>(() =>
+  rooms.map((room) => ({ label: roomName(room.id), value: room.id })),
+)
+const guestOptions = computed<SelectOption[]>(() =>
+  Array.from({ length: 4 }, (_, index) => ({
+    label: `${t('booking.dates.adults')}: ${index + 1}`,
+    value: index + 1,
+  })),
+)
 
 const minCheckOut = computed(() => {
   const d = new Date(`${checkIn.value}T00:00:00`)
@@ -49,11 +62,14 @@ const submit = () => {
       </span>
       <span class="min-w-0 flex-1">
         <span class="block text-[9px] font-bold uppercase tracking-[0.14em] text-white/55">{{ t('booking.room.selectRoom') }}</span>
-        <select v-model="roomId" class="booking-select w-full" :aria-label="t('booking.room.selectRoom')">
-          <option v-for="room in rooms" :key="room.id" :value="room.id">
-            {{ roomName(room.id) }}
-          </option>
-        </select>
+        <AppSelect
+          v-model="roomId"
+          :options="roomOptions"
+          :aria-label="t('booking.room.selectRoom')"
+          variant="dark"
+          size="sm"
+          class="mt-0.5"
+        />
       </span>
     </label>
 
@@ -63,7 +79,14 @@ const submit = () => {
       </span>
       <span class="min-w-0 flex-1">
         <span class="block text-[9px] font-bold uppercase tracking-[0.14em] text-white/55">{{ t('booking.dates.checkIn') }}</span>
-        <input v-model="checkIn" type="date" :aria-label="t('booking.dates.checkIn')" class="booking-select w-full" :min="isoDate(new Date())" />
+        <AppDatePicker
+          v-model="checkIn"
+          :aria-label="t('booking.dates.checkIn')"
+          :min="isoDate(new Date())"
+          variant="dark"
+          hide-icon
+          class="mt-0.5"
+        />
       </span>
     </label>
 
@@ -73,7 +96,14 @@ const submit = () => {
       </span>
       <span class="min-w-0 flex-1">
         <span class="block text-[9px] font-bold uppercase tracking-[0.14em] text-white/55">{{ t('booking.dates.checkOut') }}</span>
-        <input v-model="checkOut" type="date" :aria-label="t('booking.dates.checkOut')" class="booking-select w-full" :min="minCheckOut" />
+        <AppDatePicker
+          v-model="checkOut"
+          :aria-label="t('booking.dates.checkOut')"
+          :min="minCheckOut"
+          variant="dark"
+          hide-icon
+          class="mt-0.5"
+        />
       </span>
     </label>
 
@@ -83,9 +113,14 @@ const submit = () => {
       </span>
       <span class="min-w-0 flex-1">
         <span class="block text-[9px] font-bold uppercase tracking-[0.14em] text-white/55">{{ t('booking.dates.adults') }}</span>
-        <select v-model="guests" class="booking-select w-full" :aria-label="t('booking.dates.adults')">
-          <option v-for="n in 4" :key="n" :value="n">{{ n }}</option>
-        </select>
+        <AppSelect
+          v-model="guests"
+          :options="guestOptions"
+          :aria-label="t('booking.dates.adults')"
+          variant="dark"
+          size="sm"
+          class="mt-0.5"
+        />
       </span>
     </label>
 

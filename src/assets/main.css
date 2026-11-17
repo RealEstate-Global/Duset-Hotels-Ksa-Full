@@ -162,6 +162,28 @@
   .link-underline:focus-visible::after {
     @apply origin-left scale-x-100;
   }
+
+  /* Shared text-field style — single source for all form inputs */
+  .app-field {
+    @apply h-12 w-full rounded-xl border bg-background/60 px-4 text-sm text-foreground outline-none transition;
+    border-color: hsl(var(--border) / 0.8);
+    transition-duration: 200ms;
+  }
+  .app-field::placeholder {
+    color: hsl(var(--muted-foreground) / 0.6);
+  }
+  .app-field:focus {
+    border-color: hsl(var(--accent) / 0.6);
+    background: hsl(var(--background));
+    box-shadow: 0 0 0 3px hsl(var(--accent) / 0.12);
+  }
+  .app-field-error {
+    border-color: hsl(0 70% 55% / 0.6);
+    box-shadow: 0 0 0 3px hsl(0 70% 55% / 0.12);
+  }
+  textarea.app-field {
+    @apply h-auto min-h-[96px] py-3;
+  }
 }
 
 @layer utilities {

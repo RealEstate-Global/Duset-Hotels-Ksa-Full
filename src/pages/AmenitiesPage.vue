@@ -1,25 +1,19 @@
 <script setup lang="ts">
-import { Sparkles, Waves, ArrowRight } from 'lucide-vue-next'
+import { Waves, ArrowRight } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 import { amenities } from '@/data/amenities'
+import AppPageHeader from '@/components/common/AppPageHeader.vue'
 
 const { t } = useI18n()
 </script>
 
 <template>
   <main class="pb-24 pt-[68px] md:pt-[104px]">
-    <section class="border-b border-border/70 bg-secondary/40 py-16 sm:py-20">
-      <div class="container-shell flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-        <div>
-          <p class="eyebrow">{{ t('amenities.eyebrow') }}</p>
-          <h1 class="display-title mt-4 text-h1" v-html="t('amenities.title')" />
-        </div>
-        <p class="flex max-w-sm items-start gap-3 text-body-md text-muted-foreground">
-          <Sparkles :size="18" class="mt-0.5 shrink-0 text-accent" />
-          {{ t('amenities.subline') }}
-        </p>
-      </div>
-    </section>
+    <AppPageHeader
+      :eyebrow="t('amenities.eyebrow')"
+      :title="t('amenities.title')"
+      :description="t('amenities.subline')"
+    />
 
     <section class="container-shell pt-14">
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4">

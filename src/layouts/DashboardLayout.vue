@@ -20,17 +20,21 @@ import { useToast } from '@/composables/useToast'
 import { useAuth } from '@/features/auth/useAuth'
 import { useBookingStore } from '@/features/booking/booking.store'
 import { ROUTES } from '@/constants/routes'
+import AppDropdown from '@/components/common/AppDropdown.vue'
+import AppMenuItem from '@/components/common/AppMenuItem.vue'
+import AppAvatar from '@/components/common/AppAvatar.vue'
+import AppIconButton from '@/components/common/AppIconButton.vue'
+import AppBadge from '@/components/common/AppBadge.vue'
+import AppTooltip from '@/components/common/AppTooltip.vue'
 
 const route = useRoute()
 const router = useRouter()
 const { t } = useI18n()
 const toast = useToast()
-const { signOut, user, initials } = useAuth()
+const { signOut, user } = useAuth()
 const { upcomingBookings } = useBookingStore()
 
 const drawerOpen = ref(false)
-const userMenuOpen = ref(false)
-const notificationsOpen = ref(false)
 
 interface Notification {
   id: string
@@ -99,8 +103,6 @@ const handleSignOut = () => {
 
 const closeAll = () => {
   drawerOpen.value = false
-  userMenuOpen.value = false
-  notificationsOpen.value = false
 }
 
 watch(
@@ -145,14 +147,14 @@ const isActive = (to: string, exact = false) =>
     <header class="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-xl">
       <div class="container-shell flex h-16 items-center justify-between gap-3">
         <div class="flex items-center gap-2 sm:gap-4">
-          <button
-            class="flex h-11 w-11 items-center justify-center rounded-full bg-secondary transition hover:bg-secondary/80 lg:hidden"
-            :aria-label="t('common.actions.openMenu')"
-            :aria-expanded="drawerOpen"
+          <AppIconButton
+            class="lg:hidden"
+            :label="t('common.actions.openMenu')"
+            variant="ghost"
             @click="drawerOpen = true"
           >
             <Menu :size="20" />
-          </button>
+          </AppIconButton>
           <RouterLink to="/" class="flex items-center gap-2.5" :aria-label="t('nav.homeAria')">
             <img
               src="/images/uploads/logos/3203_duset_hotel_suites_logo.webp"
@@ -174,83 +176,61 @@ const isActive = (to: string, exact = false) =>
           </RouterLink>
 
           <!-- Notifications -->
-          <div class="relative">
-            <button
-              class="relative flex h-11 w-11 items-center justify-center rounded-full text-foreground/70 transition hover:bg-secondary hover:text-foreground"
-              :aria-label="t('dashboard.notifications.title')"
-              :aria-expanded="notificationsOpen"
-              @click="notificationsOpen = !notificationsOpen; userMenuOpen = false"
-            >
-              <Bell :size="19" />
-              <span
-                v-if="unreadCount"
-                class="absolute right-2 top-2 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[8px] font-black text-accent-foreground"
-                >{{ unreadCount }}</span
+          <AppTooltip :text="t('dashboard.notifications.title')">
+            <AppDropdown align="end" width="xl" panel-role="region" :label="t('dashboard.notifications.title')" trigger-class="relative flex h-11 w-11 items-center justify-center rounded-full text-foreground/70 transition hover:bg-secondary hover:text-foreground">
+              <template #trigger>
+                <Bell :size="19" />
+                <AppBadge
+                  v-if="unreadCount"
+                  variant="accent"
+                  class="absolute right-1.5 top-1.5 h-4 min-w-4 px-1 text-[8px]"
+                  :count="unreadCount"
+                />
+              </template>
+            <div class="flex items-center justify-between border-b border-border/70 px-4 py-3">
+              <p class="font-display text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                {{ t('dashboard.notifications.title') }}
+              </p>
+              <button
+                class="flex items-center gap-1.5 text-[11px] font-bold text-accent transition hover:text-accent/80"
+                @click="markAllRead"
               >
-            </button>
-            <Transition name="dash-pop">
-              <div
-                v-if="notificationsOpen"
-                class="absolute right-0 z-50 mt-3 w-80 overflow-hidden rounded-2xl border border-border/80 bg-card shadow-card-hover rtl:right-auto rtl:left-0"
-              >
-                <div class="flex items-center justify-between border-b border-border/70 px-4 py-3">
-                  <p class="font-display text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
-                    {{ t('dashboard.notifications.title') }}
-                  </p>
-                  <button
-                    class="flex items-center gap-1.5 text-[11px] font-bold text-accent transition hover:text-accent/80"
-                    @click="markAllRead"
-                  >
-                    <CheckCheck :size="13" /> {{ t('dashboard.notifications.markAllRead') }}
-                  </button>
-                </div>
-                <ul class="max-h-80 divide-y divide-border/60 overflow-y-auto">
-                  <li v-for="notification in notifications" :key="notification.id" class="flex gap-3 px-4 py-3 transition hover:bg-secondary/40">
-                    <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                      <component :is="notification.icon" :size="17" />
-                    </span>
-                    <span class="min-w-0">
-                      <span class="flex items-center gap-2 text-xs font-bold leading-5">
-                        {{ notification.title }}
-                        <span v-if="notification.unread" class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                      </span>
-                      <span class="mt-0.5 block text-[11px] leading-4 text-muted-foreground">{{ notification.body }}</span>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </Transition>
-          </div>
+                <CheckCheck :size="13" /> {{ t('dashboard.notifications.markAllRead') }}
+              </button>
+            </div>
+            <ul class="max-h-80 divide-y divide-border/60 overflow-y-auto">
+              <li v-for="notification in notifications" :key="notification.id" class="flex gap-3 px-4 py-3 transition hover:bg-secondary/40">
+                <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <component :is="notification.icon" :size="17" />
+                </span>
+                <span class="min-w-0">
+                  <span class="flex items-center gap-2 text-xs font-bold leading-5">
+                    {{ notification.title }}
+                    <span v-if="notification.unread" class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                  </span>
+                  <span class="mt-0.5 block text-[11px] leading-4 text-muted-foreground">{{ notification.body }}</span>
+                </span>
+              </li>
+            </ul>
+          </AppDropdown>
+          </AppTooltip>
 
           <!-- User menu -->
-          <div class="relative">
-            <button
-              class="flex h-11 items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-1.5 transition hover:border-accent/60 hover:bg-accent/15"
-              :aria-expanded="userMenuOpen"
-              :aria-label="t('dashboard.sidebar.profile')"
-              @click="userMenuOpen = !userMenuOpen; notificationsOpen = false"
-            >
-              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-[11px] font-black text-accent-foreground">{{ initials }}</span>
-            </button>
-            <Transition name="dash-pop">
-              <div
-                v-if="userMenuOpen"
-                class="absolute right-0 z-50 mt-3 w-56 overflow-hidden rounded-2xl border border-border/80 bg-card p-2 shadow-card-hover rtl:right-auto rtl:left-0"
-                role="menu"
-              >
-                <div class="border-b border-border/70 px-3 py-2.5">
-                  <p class="truncate text-sm font-bold">{{ user?.name }}</p>
-                  <p class="truncate text-[11px] text-muted-foreground" dir="ltr">{{ user?.email }}</p>
-                </div>
-                <RouterLink to="/dashboard/profile" class="dash-menu-item" role="menuitem">
-                  <UserRound :size="16" /> {{ t('dashboard.sidebar.profile') }}
-                </RouterLink>
-                <button class="dash-menu-item w-full text-rose-500 hover:bg-rose-500/10 hover:text-rose-600" role="menuitem" @click="handleSignOut">
-                  <LogOut :size="16" /> {{ t('dashboard.sidebar.signOut') }}
-                </button>
+          <AppDropdown align="end" width="sm" :label="t('dashboard.sidebar.profile')" trigger-class="flex h-11 items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-1.5 transition hover:border-accent/60 hover:bg-accent/15">
+            <template #trigger>
+              <AppAvatar :name="user?.name ?? ''" size="sm" />
+            </template>
+            <template #default="{ close }">
+              <div class="border-b border-border/70 px-3 py-2.5">
+                <p class="truncate text-sm font-bold">{{ user?.name }}</p>
+                <p class="truncate text-[11px] text-muted-foreground" dir="ltr">{{ user?.email }}</p>
               </div>
-            </Transition>
-          </div>
+              <div class="py-1.5">
+                <AppMenuItem to="/dashboard/profile" :icon="UserRound" @click="close">{{ t('dashboard.sidebar.profile') }}</AppMenuItem>
+                <AppMenuItem danger :icon="LogOut" @click="close(); handleSignOut()">{{ t('dashboard.sidebar.signOut') }}</AppMenuItem>
+              </div>
+            </template>
+          </AppDropdown>
         </div>
       </div>
     </header>
@@ -262,7 +242,7 @@ const isActive = (to: string, exact = false) =>
       >
         <!-- User card -->
         <div class="flex items-center gap-3 rounded-2xl border border-primary-foreground/12 bg-primary-foreground/5 p-3.5">
-          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent font-display text-base font-black text-accent-foreground">{{ initials }}</span>
+          <AppAvatar :name="user?.name ?? ''" size="lg" />
           <div class="min-w-0">
             <p class="truncate text-sm font-bold">{{ user?.name }}</p>
             <p class="truncate text-[10px] uppercase tracking-[0.14em] text-primary-foreground/45">{{ t('dashboard.overview.stats.tierGold') }}</p>
@@ -282,9 +262,10 @@ const isActive = (to: string, exact = false) =>
             <span class="flex-1 truncate">{{ item.label }}</span>
             <span
               v-if="item.badge"
-              class="flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-[10px] font-black text-accent-foreground"
-              >{{ item.badge }}</span
+              class="ml-auto"
             >
+              <AppBadge variant="accent" :count="item.badge" />
+            </span>
           </RouterLink>
         </nav>
 
@@ -331,7 +312,7 @@ const isActive = (to: string, exact = false) =>
             </button>
           </div>
           <div class="mt-6 flex items-center gap-3 rounded-2xl border border-primary-foreground/12 bg-primary-foreground/5 p-3.5">
-            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent font-display text-base font-black text-accent-foreground">{{ initials }}</span>
+            <AppAvatar :name="user?.name ?? ''" size="lg" />
             <div class="min-w-0">
               <p class="truncate text-sm font-bold">{{ user?.name }}</p>
               <p class="truncate text-[10px] uppercase tracking-[0.14em] text-primary-foreground/45">{{ t('dashboard.overview.stats.tierGold') }}</p>
@@ -347,7 +328,7 @@ const isActive = (to: string, exact = false) =>
             >
               <component :is="item.icon" :size="18" class="shrink-0" />
               <span class="flex-1">{{ item.label }}</span>
-              <span v-if="item.badge" class="flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-[10px] font-black text-accent-foreground">{{ item.badge }}</span>
+              <AppBadge v-if="item.badge" variant="accent" :count="item.badge" />
             </RouterLink>
             <RouterLink to="/dashboard/profile" class="dash-nav-item" :class="{ 'dash-nav-item-active': isActive('/dashboard/profile') }">
               <UserRound :size="18" class="shrink-0" />
@@ -401,36 +382,6 @@ const isActive = (to: string, exact = false) =>
   background: hsl(var(--accent));
 }
 
-.dash-menu-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  border-radius: 0.7rem;
-  padding: 0.6rem 0.7rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: hsl(var(--foreground) / 0.75);
-  transition:
-    background 180ms,
-    color 180ms;
-}
-.dash-menu-item:hover {
-  background: hsl(var(--secondary));
-  color: hsl(var(--foreground));
-}
-
-.dash-pop-enter-active,
-.dash-pop-leave-active {
-  transition:
-    opacity 200ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-.dash-pop-enter-from,
-.dash-pop-leave-to {
-  opacity: 0;
-  transform: translateY(-8px) scale(0.97);
-}
-
 .dash-drawer-enter-active,
 .dash-drawer-leave-active {
   transition: opacity 250ms ease;
@@ -453,8 +404,6 @@ const isActive = (to: string, exact = false) =>
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dash-pop-enter-active,
-  .dash-pop-leave-active,
   .dash-drawer-enter-active,
   .dash-drawer-leave-active {
     transition: none;

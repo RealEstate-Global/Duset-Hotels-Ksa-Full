@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { ArrowUpRight, Star } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 import SectionHeading from '@/components/common/SectionHeading.vue'
+import AppPageHeader from '@/components/common/AppPageHeader.vue'
 import FacilitiesSection from '@/components/sections/FacilitiesSection.vue'
 import { coreFeatures } from '@/data/amenities'
 import { SITE } from '@/constants/site'
@@ -13,20 +14,14 @@ const heroStats = computed(() => tm('about.stats') as unknown as { value: string
 
 <template>
   <main class="pb-0 pt-[68px] md:pt-[104px]">
-    <section class="border-b border-border/70 bg-secondary/40 py-16 sm:py-20">
-      <div class="container-shell flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-        <div>
-          <p class="eyebrow">{{ t('about.eyebrow') }}</p>
-          <h1 class="display-title mt-4 text-h1" v-html="t('about.title')" />
-        </div>
-        <div class="flex items-center gap-3 text-sm text-muted-foreground">
-          <span
-            class="flex h-9 w-9 items-center justify-center rounded-full bg-background text-accent"
-            ><Star :size="16" class="fill-accent" /></span
-          ><span>{{ t('about.ratingLabel', { rating: SITE.tripadvisorRating, reviews: SITE.tripadvisorReviews }) }}</span>
-        </div>
-      </div>
-    </section>
+    <AppPageHeader :eyebrow="t('about.eyebrow')" :title="t('about.title')">
+      <template #actions>
+        <span
+          class="flex h-9 w-9 items-center justify-center rounded-full bg-background text-accent"
+          ><Star :size="16" class="fill-accent" /></span
+        ><span class="max-w-[180px] text-xs leading-4 text-muted-foreground">{{ t('about.ratingLabel', { rating: SITE.tripadvisorRating, reviews: SITE.tripadvisorReviews }) }}</span>
+      </template>
+    </AppPageHeader>
 
     <section class="container-shell grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-[1fr_1fr]">
       <div>

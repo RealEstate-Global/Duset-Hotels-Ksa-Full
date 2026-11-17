@@ -135,7 +135,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
             <img
               src="/images/uploads/logos/3203_duset_hotel_suites_logo.webp"
               alt="Duset Hotel Suites"
-              class="relative h-16 w-auto rounded-xl bg-white/95 p-1.5"
+              class="relative h-11 w-auto max-w-[140px] rounded-lg bg-white/95 p-1 object-contain sm:h-12 sm:max-w-[160px] sm:p-1.5"
             />
             <div class="relative">
               <h2 class="font-display text-3xl font-semibold leading-[1.15] tracking-[-0.05em]">
@@ -159,9 +159,9 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
           </div>
 
           <!-- Form panel -->
-          <div class="relative flex min-h-0 flex-1 flex-col overflow-y-auto p-6 sm:p-8">
+          <div class="relative flex min-h-0 flex-1 flex-col overflow-y-auto p-5 sm:p-7 lg:p-8">
             <button
-              class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full text-muted-foreground transition hover:bg-secondary hover:text-foreground"
+              class="absolute end-4 top-4 flex h-10 w-10 items-center justify-center rounded-full text-muted-foreground transition hover:bg-secondary hover:text-foreground"
               :aria-label="t('common.actions.close')"
               @click="close"
             >
@@ -173,7 +173,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
               <img
                 src="/images/uploads/logos/3203_duset_hotel_suites_logo.webp"
                 alt="Duset Hotel Suites"
-                class="h-11 w-auto rounded-lg bg-white/95 p-1"
+                class="h-10 w-auto max-w-[120px] rounded-lg bg-white/95 p-1 object-contain"
               />
               <p class="font-display text-sm font-semibold leading-tight text-foreground/85">
                 {{ t('auth.modal.title') }}
@@ -222,7 +222,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
                     type="text"
                     autocomplete="name"
                     :placeholder="t('auth.modal.namePlaceholder')"
-                    class="auth-input mt-1.5"
+                    class="app-field mt-1.5"
                   />
                 </div>
                 <div>
@@ -234,7 +234,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
                     type="email"
                     autocomplete="email"
                     :placeholder="t('auth.modal.emailPlaceholder')"
-                    class="auth-input mt-1.5"
+                    class="app-field mt-1.5"
                     dir="ltr"
                   />
                 </div>
@@ -246,7 +246,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
                     type="tel"
                     autocomplete="tel"
                     :placeholder="t('auth.modal.phonePlaceholder')"
-                    class="auth-input mt-1.5"
+                    class="app-field mt-1.5"
                     dir="ltr"
                   />
                 </div>
@@ -259,12 +259,12 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
                       :type="showPassword ? 'text' : 'password'"
                       :autocomplete="mode === 'signin' ? 'current-password' : 'new-password'"
                       :placeholder="t('auth.modal.passwordPlaceholder')"
-                      class="auth-input pe-12"
+                      class="app-field pe-12"
                       dir="ltr"
                     />
                     <button
                       type="button"
-                      class="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground transition hover:bg-secondary hover:text-foreground"
+                      class="absolute end-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground transition hover:bg-secondary hover:text-foreground"
                       :aria-label="showPassword ? t('auth.modal.hidePassword') : t('auth.modal.showPassword')"
                       @click="showPassword = !showPassword"
                     >
@@ -298,7 +298,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
 
             <!-- Demo access -->
             <button
-              class="group mt-5 flex items-center justify-between gap-3 rounded-2xl border border-accent/25 bg-accent/5 px-4 py-3 text-left transition duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:bg-accent/10"
+              class="group mt-5 flex items-center justify-between gap-3 rounded-2xl border border-accent/25 bg-accent/5 px-4 py-3 text-start transition duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:bg-accent/10"
               :aria-label="t('auth.modal.demoButton')"
               @click="fillDemo"
             >
@@ -318,34 +318,10 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
 </template>
 
 <style scoped>
-.auth-input {
-  width: 100%;
-  height: 48px;
-  border-radius: 0.85rem;
-  border: 1px solid hsl(var(--border) / 0.8);
-  background: hsl(var(--background) / 0.6);
-  padding: 0 1rem;
-  font-size: 0.875rem;
-  color: hsl(var(--foreground));
-  outline: none;
-  transition:
-    border-color 200ms,
-    box-shadow 200ms,
-    background 200ms;
-}
-.auth-input::placeholder {
-  color: hsl(var(--muted-foreground) / 0.6);
-}
-.auth-input:focus {
-  border-color: hsl(var(--accent) / 0.6);
-  background: hsl(var(--background));
-  box-shadow: 0 0 0 3px hsl(var(--accent) / 0.12);
-}
-
 .tab-indicator {
   position: absolute;
   inset-block: 4px;
-  left: 4px;
+  inset-inline-start: 4px;
   z-index: 0;
   width: calc(50% - 4px);
   border-radius: 9999px;

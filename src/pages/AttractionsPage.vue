@@ -2,23 +2,14 @@
 import AttractionsGrid from '@/components/sections/AttractionsGrid.vue'
 import { useI18n } from 'vue-i18n'
 import { SITE } from '@/constants/site'
+import AppPageHeader from '@/components/common/AppPageHeader.vue'
 
 const { t } = useI18n()
 </script>
 
 <template>
   <main class="pb-24 pt-[68px] md:pt-[104px]">
-    <section class="border-b border-border/70 bg-secondary/40 py-16 sm:py-20">
-      <div class="container-shell flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-        <div>
-          <p class="eyebrow">{{ t('attractions.eyebrow') }}</p>
-          <h1 class="display-title mt-4 text-h1" v-html="t('attractions.title')" />
-        </div>
-        <p class="max-w-sm text-body-md text-muted-foreground">
-          {{ t('attractions.subline') }}
-        </p>
-      </div>
-    </section>
+    <AppPageHeader :eyebrow="t('attractions.eyebrow')" :title="t('attractions.title')" :description="t('attractions.subline')" />
 
     <section class="container-shell pt-14">
       <AttractionsGrid :limit="9" />

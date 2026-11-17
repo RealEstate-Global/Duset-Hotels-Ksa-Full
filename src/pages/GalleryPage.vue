@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { ChevronLeft, ChevronRight, X, Expand } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 import { galleryCategories } from '@/data/gallery'
+import AppPageHeader from '@/components/common/AppPageHeader.vue'
 
 const { t } = useI18n()
 const activeCategory = ref(galleryCategories[0].id)
@@ -44,15 +45,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
 
 <template>
   <main class="pb-24 pt-[68px] md:pt-[104px]">
-    <section class="border-b border-border/70 bg-secondary/40 py-16 sm:py-20">
-      <div class="container-shell">
-        <p class="eyebrow">{{ t('gallery.eyebrow') }}</p>
-        <h1 class="display-title mt-4 text-h1" v-html="t('gallery.title')" />
-        <p class="mt-6 max-w-md text-body-md text-muted-foreground">
-          {{ t('gallery.subline') }}
-        </p>
-      </div>
-    </section>
+    <AppPageHeader :eyebrow="t('gallery.eyebrow')" :title="t('gallery.title')" :description="t('gallery.subline')" />
 
     <section class="container-shell pt-10">
       <div class="flex flex-wrap gap-2 border-b border-border pb-5" role="tablist" :aria-label="t('gallery.ariaCategory')">

@@ -3,23 +3,18 @@ import RoomCard from '@/features/rooms/components/RoomCard.vue'
 import { coreFeatures } from '@/data/amenities'
 import { rooms } from '@/features/rooms/data/rooms'
 import { useI18n } from 'vue-i18n'
+import AppPageHeader from '@/components/common/AppPageHeader.vue'
 
 const { t } = useI18n()
 </script>
 
 <template>
   <main class="pb-24 pt-[68px] md:pt-[104px]">
-    <section class="border-b border-border/70 bg-secondary/40 py-16 sm:py-20">
-      <div class="container-shell flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-        <div>
-          <p class="eyebrow">{{ t('rooms.pageEyebrow') }}</p>
-          <h1 class="display-title mt-4 text-h1" v-html="t('rooms.pageTitle')" />
-        </div>
-        <p class="max-w-sm text-body-md text-muted-foreground">
-          {{ t('rooms.pageSubline') }}
-        </p>
-      </div>
-    </section>
+    <AppPageHeader
+      :eyebrow="t('rooms.pageEyebrow')"
+      :title="t('rooms.pageTitle')"
+      :description="t('rooms.pageSubline')"
+    />
 
     <section class="container-shell pt-14">
       <div class="grid gap-6 sm:grid-cols-2 xl:gap-8">

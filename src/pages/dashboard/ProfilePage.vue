@@ -8,6 +8,7 @@ import { useToast } from '@/composables/useToast'
 import { setLocale, type SupportedLocale } from '@/i18n'
 import { useTheme } from '@/composables/useTheme'
 import ConfirmModal from '@/components/common/ConfirmModal.vue'
+import AppToggle from '@/components/common/AppToggle.vue'
 
 const { t, locale } = useI18n()
 const { user, updateProfile, initials } = useAuth()
@@ -23,6 +24,20 @@ const form = ref({
 
 const prefs = ref(readPrefs())
 const resetOpen = ref(false)
+
+const savePrefs = (patch: Partial<{ emailOffers: boolean; smsReminders: boolean }>) => {
+  prefs.value = { ...prefs.value, ...patch }
+  writePrefs(prefs.value)
+}
+
+const emailOffers = computed({
+  get: () => prefs.value.emailOffers,
+  set: (value: boolean) => savePrefs({ emailOffers: value }),
+})
+const smsReminders = computed({
+  get: () => prefs.value.smsReminders,
+  set: (value: boolean) => savePrefs({ smsReminders: value }),
+})
 
 const localeCode = computed(() => (locale.value === 'ar' ? 'ar-SA' : 'en-SA'))
 const memberSince = computed(() => {
@@ -44,11 +59,6 @@ const save = () => {
     phone: form.value.phone.trim(),
   })
   toast.success(t('dashboard.profile.savedToast'))
-}
-
-const savePrefs = (patch: Partial<{ emailOffers: boolean; smsReminders: boolean }>) => {
-  prefs.value = { ...prefs.value, ...patch }
-  writePrefs(prefs.value)
 }
 
 const resetData = () => {
@@ -84,15 +94,15 @@ const resetData = () => {
         <form class="mt-4 grid gap-4" @submit.prevent="save">
           <div>
             <label for="profile-name" class="text-caption font-bold uppercase text-muted-foreground">{{ t('dashboard.profile.name') }}</label>
-            <input id="profile-name" v-model="form.name" type="text" autocomplete="name" class="profile-input mt-1.5" />
+            <input id="profile-name" v-model="form.name" type="text" autocomplete="name" class="app-field mt-1.5" />
           </div>
           <div>
             <label for="profile-email" class="text-caption font-bold uppercase text-muted-foreground">{{ t('dashboard.profile.email') }}</label>
-            <input id="profile-email" v-model="form.email" type="email" autocomplete="email" class="profile-input mt-1.5" dir="ltr" />
+            <input id="profile-email" v-model="form.email" type="email" autocomplete="email" class="app-field mt-1.5" dir="ltr" />
           </div>
           <div>
             <label for="profile-phone" class="text-caption font-bold uppercase text-muted-foreground">{{ t('dashboard.profile.phone') }}</label>
-            <input id="profile-phone" v-model="form.phone" type="tel" autocomplete="tel" class="profile-input mt-1.5" dir="ltr" />
+            <input id="profile-phone" v-model="form.phone" type="tel" autocomplete="tel" class="app-field mt-1.5" dir="ltr" />
           </div>
           <button type="submit" class="mt-1 inline-flex h-13 w-fit items-center rounded-2xl bg-primary px-7 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground transition hover:-translate-y-0.5">
             {{ t('dashboard.profile.save') }}
@@ -105,20 +115,18 @@ const resetData = () => {
         <section class="rounded-2xl border border-border/80 bg-card p-5 sm:p-6">
           <h2 class="text-caption font-bold uppercase tracking-[0.18em] text-muted-foreground">{{ t('dashboard.profile.preferences') }}</h2>
           <div class="mt-4 divide-y divide-border/70">
-            <label class="flex cursor-pointer items-center justify-between gap-4 py-4">
-              <span>
-                <span class="block text-sm font-bold">{{ t('dashboard.profile.emailOffers') }}</span>
-                <span class="mt-0.5 block text-[11px] leading-4 text-muted-foreground">{{ t('dashboard.profile.emailOffersSub') }}</span>
-              </span>
-              <input type="checkbox" class="toggle" :checked="prefs.emailOffers" @change="savePrefs({ emailOffers: ($event.target as HTMLInputElement).checked })" />
-            </label>
-            <label class="flex cursor-pointer items-center justify-between gap-4 py-4">
-              <span>
-                <span class="block text-sm font-bold">{{ t('dashboard.profile.smsReminders') }}</span>
-                <span class="mt-0.5 block text-[11px] leading-4 text-muted-foreground">{{ t('dashboard.profile.smsRemindersSub') }}</span>
-              </span>
-              <input type="checkbox" class="toggle" :checked="prefs.smsReminders" @change="savePrefs({ smsReminders: ($event.target as HTMLInputElement).checked })" />
-            </label>
+            <AppToggle
+              class="py-4"
+              v-model="emailOffers"
+              :label="t('dashboard.profile.emailOffers')"
+              :description="t('dashboard.profile.emailOffersSub')"
+            />
+            <AppToggle
+              class="py-4"
+              v-model="smsReminders"
+              :label="t('dashboard.profile.smsReminders')"
+              :description="t('dashboard.profile.smsRemindersSub')"
+            />
           </div>
         </section>
 
@@ -162,63 +170,7 @@ const resetData = () => {
 </template>
 
 <style scoped>
-.profile-input {
-  width: 100%;
-  height: 48px;
-  border-radius: 0.85rem;
-  border: 1px solid hsl(var(--border) / 0.8);
-  background: hsl(var(--background) / 0.6);
-  padding: 0 1rem;
-  font-size: 0.875rem;
-  color: hsl(var(--foreground));
-  outline: none;
-  transition:
-    border-color 200ms,
-    box-shadow 200ms,
-    background 200ms;
-}
-.profile-input:focus {
-  border-color: hsl(var(--accent) / 0.6);
-  background: hsl(var(--background));
-  box-shadow: 0 0 0 3px hsl(var(--accent) / 0.12);
-}
-
 .h-13 {
   height: 3.25rem;
-}
-
-.toggle {
-  position: relative;
-  width: 44px;
-  height: 24px;
-  flex-shrink: 0;
-  appearance: none;
-  border-radius: 999px;
-  border: 1px solid hsl(var(--border));
-  background: hsl(var(--secondary));
-  cursor: pointer;
-  transition: background 220ms;
-}
-.toggle::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  inset-inline-start: 2px;
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  background: #fff;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
-  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-.toggle:checked {
-  background: hsl(var(--accent));
-  border-color: hsl(var(--accent));
-}
-.toggle:checked::after {
-  transform: translateX(20px);
-}
-[dir='rtl'] .toggle:checked::after {
-  transform: translateX(-20px);
 }
 </style>

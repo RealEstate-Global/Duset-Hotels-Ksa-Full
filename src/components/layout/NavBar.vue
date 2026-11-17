@@ -10,18 +10,21 @@ import { setLocale, type SupportedLocale } from '@/i18n'
 import { useAuth } from '@/features/auth/useAuth'
 import { useToast } from '@/composables/useToast'
 import AuthModal from '@/components/layout/AuthModal.vue'
+import AppDropdown from '@/components/common/AppDropdown.vue'
+import AppMenuItem from '@/components/common/AppMenuItem.vue'
+import AppIconButton from '@/components/common/AppIconButton.vue'
+import AppAvatar from '@/components/common/AppAvatar.vue'
+import AppTooltip from '@/components/common/AppTooltip.vue'
 
 const route = useRoute()
 const router = useRouter()
 const { isDark, toggleTheme } = useTheme()
 const { t, locale } = useI18n()
-const { isAuthenticated, user, initials, signOut } = useAuth()
+const { isAuthenticated, user, signOut } = useAuth()
 const toast = useToast()
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
 const isAuthOpen = ref(false)
-const isUserMenuOpen = ref(false)
-const userMenuRef = ref<HTMLElement | null>(null)
 
 const links = computed(() => [
   { label: t('nav.links.rooms'), to: ROUTES.rooms },
@@ -57,27 +60,7 @@ const openAuth = () => {
   isAuthOpen.value = true
 }
 
-const closeUserMenu = () => {
-  isUserMenuOpen.value = false
-}
-
-const toggleUserMenu = () => {
-  isUserMenuOpen.value = !isUserMenuOpen.value
-}
-
-const onDocumentPointerDown = (event: PointerEvent) => {
-  if (!isUserMenuOpen.value) return
-  if (userMenuRef.value && !userMenuRef.value.contains(event.target as Node)) {
-    closeUserMenu()
-  }
-}
-
-const onDocumentKeydown = (event: KeyboardEvent) => {
-  if (event.key === 'Escape') closeUserMenu()
-}
-
 const handleSignOut = () => {
-  closeUserMenu()
   closeMenu()
   signOut()
   toast.info(t('auth.dropdown.signOut'))
@@ -98,8 +81,6 @@ const toggleLanguage = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', onScroll, { passive: true })
-  document.addEventListener('pointerdown', onDocumentPointerDown)
-  document.addEventListener('keydown', onDocumentKeydown)
   // The dashboard guard bounced an anonymous visitor here — open the sign-in modal.
   if (route.query.auth === 'required' || window.sessionStorage.getItem('duset-open-auth')) {
     window.sessionStorage.removeItem('duset-open-auth')
@@ -115,8 +96,6 @@ watch(isAuthenticated, (loggedIn) => {
 })
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
-  document.removeEventListener('pointerdown', onDocumentPointerDown)
-  document.removeEventListener('keydown', onDocumentKeydown)
 })
 </script>
 
@@ -170,24 +149,24 @@ onBeforeUnmount(() => {
       </nav>
 
       <div class="hidden items-center gap-2 lg:flex">
-        <button
-          class="flex h-10 min-w-10 items-center justify-center gap-1 rounded-full border border-border px-2.5 text-xs font-black tracking-wide text-foreground/75 transition duration-standard ease-premium hover:border-accent/50 hover:text-accent"
-          :aria-label="t('nav.switchLanguage')"
-          @click="toggleLanguage"
-        >
-          <Languages :size="15" />
-          <span>{{ languageLabel }}</span>
-        </button>
-        <button
-          class="flex h-10 w-10 items-center justify-center rounded-full text-foreground/70 transition duration-standard ease-premium hover:bg-secondary hover:text-foreground"
-          :aria-label="themeLabel"
-          @click="toggleTheme"
-        >
-          <Transition name="icon-swap" mode="out-in">
-            <Sun v-if="isDark" :key="'sun'" :size="17" :stroke-width="1.8" />
-            <Moon v-else :key="'moon'" :size="17" :stroke-width="1.8" />
-          </Transition>
-        </button>
+        <AppTooltip :text="t('nav.switchLanguage')">
+          <button
+            class="flex h-10 min-w-10 items-center justify-center gap-1 rounded-full border border-border px-2.5 text-xs font-black tracking-wide text-foreground/75 transition duration-standard ease-premium hover:border-accent/50 hover:text-accent"
+            :aria-label="t('nav.switchLanguage')"
+            @click="toggleLanguage"
+          >
+            <Languages :size="15" />
+            <span>{{ languageLabel }}</span>
+          </button>
+        </AppTooltip>
+        <AppTooltip :text="themeLabel">
+          <AppIconButton :label="themeLabel" variant="ghost" @click="toggleTheme">
+            <Transition name="icon-swap" mode="out-in">
+              <Sun v-if="isDark" :key="'sun'" :size="17" :stroke-width="1.8" />
+              <Moon v-else :key="'moon'" :size="17" :stroke-width="1.8" />
+            </Transition>
+          </AppIconButton>
+        </AppTooltip>
 
         <!-- Auth: sign-in trigger or user avatar dropdown -->
         <div v-if="!isAuthenticated" class="flex items-center">
@@ -200,51 +179,25 @@ onBeforeUnmount(() => {
             <span class="hidden xl:inline">{{ t('auth.modal.signInTab') }}</span>
           </button>
         </div>
-        <div v-else ref="userMenuRef" class="relative">
-          <button
-            class="flex h-10 items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-1.5 transition duration-standard ease-premium hover:border-accent/60 hover:bg-accent/15"
-            :aria-expanded="isUserMenuOpen"
-            :aria-label="t('auth.dropdown.dashboard')"
-            @click="toggleUserMenu"
-          >
-            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-[11px] font-black text-accent-foreground">{{ initials }}</span>
-            <ChevronDown :size="15" class="text-accent transition duration-300" :class="{ 'rotate-180': isUserMenuOpen }" />
-          </button>
-          <Transition name="user-menu">
-            <div
-              v-if="isUserMenuOpen"
-              class="absolute right-0 z-50 mt-3 w-64 overflow-hidden rounded-2xl border border-border/80 bg-card p-2 shadow-card-hover backdrop-blur-xl rtl:right-auto rtl:left-0"
-              role="menu"
-            >
-              <div class="border-b border-border/70 px-3 py-3">
-                <p class="font-display text-sm font-semibold leading-tight">{{ user?.name }}</p>
-                <p class="mt-0.5 truncate text-[11px] text-muted-foreground" dir="ltr">{{ user?.email }}</p>
-              </div>
-              <div class="py-1.5">
-                <RouterLink to="/dashboard" class="user-menu-item" role="menuitem" @click="closeUserMenu">
-                  <LayoutDashboard :size="17" class="text-accent" /> {{ t('auth.dropdown.dashboard') }}
-                </RouterLink>
-                <RouterLink to="/dashboard/bookings" class="user-menu-item" role="menuitem" @click="closeUserMenu">
-                  <CalendarRange :size="17" class="text-accent" />
-                  {{ t('auth.dropdown.myBookings') }}
-                </RouterLink>
-                <RouterLink to="/dashboard/payments" class="user-menu-item" role="menuitem" @click="closeUserMenu">
-                  <CreditCard :size="17" class="text-accent" /> {{ t('auth.dropdown.payments') }}
-                </RouterLink>
-                <RouterLink to="/dashboard/profile" class="user-menu-item" role="menuitem" @click="closeUserMenu">
-                  <UserRound :size="17" class="text-accent" /> {{ t('auth.dropdown.profile') }}
-                </RouterLink>
-              </div>
-              <button
-                class="user-menu-item w-full border-t border-border/70 pt-3 text-left text-rose-500 hover:bg-rose-500/8 hover:text-rose-600 rtl:text-right"
-                role="menuitem"
-                @click="handleSignOut"
-              >
-                <LogOut :size="17" /> {{ t('auth.dropdown.signOut') }}
-              </button>
+        <AppDropdown v-else align="end" width="md" :label="t('auth.dropdown.dashboard')" trigger-class="flex h-10 items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-1.5 transition duration-standard ease-premium hover:border-accent/60 hover:bg-accent/15">
+          <template #trigger="{ open }">
+            <AppAvatar :name="user?.name ?? ''" size="sm" />
+            <ChevronDown :size="15" class="text-accent transition duration-300" :class="{ 'rotate-180': open }" />
+          </template>
+          <template #default="{ close }">
+            <div class="border-b border-border/70 px-3 py-3">
+              <p class="font-display text-sm font-semibold leading-tight">{{ user?.name }}</p>
+              <p class="mt-0.5 truncate text-[11px] text-muted-foreground" dir="ltr">{{ user?.email }}</p>
             </div>
-          </Transition>
-        </div>
+            <div class="py-1.5">
+              <AppMenuItem to="/dashboard" :icon="LayoutDashboard" @click="close">{{ t('auth.dropdown.dashboard') }}</AppMenuItem>
+              <AppMenuItem to="/dashboard/bookings" :icon="CalendarRange" @click="close">{{ t('auth.dropdown.myBookings') }}</AppMenuItem>
+              <AppMenuItem to="/dashboard/payments" :icon="CreditCard" @click="close">{{ t('auth.dropdown.payments') }}</AppMenuItem>
+              <AppMenuItem to="/dashboard/profile" :icon="UserRound" @click="close">{{ t('auth.dropdown.profile') }}</AppMenuItem>
+              <AppMenuItem danger :icon="LogOut" @click="close(); handleSignOut()">{{ t('auth.dropdown.signOut') }}</AppMenuItem>
+            </div>
+          </template>
+        </AppDropdown>
         <RouterLink
           to="/booking"
           class="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-bold text-accent-foreground transition duration-300 ease-premium hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-float"
@@ -269,10 +222,10 @@ onBeforeUnmount(() => {
         <RouterLink
           v-else
           to="/dashboard"
-          class="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-[12px] font-black text-accent-foreground transition duration-standard ease-premium hover:-translate-y-0.5"
+          class="flex h-11 w-11 items-center justify-center transition duration-standard ease-premium hover:-translate-y-0.5"
           :aria-label="t('auth.dropdown.dashboard')"
         >
-          {{ initials }}
+          <AppAvatar :name="user?.name ?? ''" size="md" />
         </RouterLink>
         <button
           class="flex h-11 w-11 items-center justify-center rounded-full bg-secondary transition duration-standard ease-premium hover:-translate-y-0.5 hover:bg-secondary/80"
@@ -370,7 +323,7 @@ onBeforeUnmount(() => {
             </div>
             <div class="flex items-center gap-3 border-t border-border/60 pt-4">
               <template v-if="isAuthenticated">
-                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-black text-accent-foreground">{{ initials }}</span>
+                <AppAvatar :name="user?.name ?? ''" size="lg" />
                 <div class="min-w-0 flex-1">
                   <p class="truncate text-sm font-bold">{{ user?.name }}</p>
                   <button class="text-[11px] font-semibold text-muted-foreground transition hover:text-foreground" @click="handleSignOut">
@@ -400,37 +353,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.user-menu-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-  border-radius: 0.85rem;
-  padding: 0.65rem 0.75rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: hsl(var(--foreground) / 0.8);
-  transition:
-    background 180ms,
-    color 180ms;
-}
-.user-menu-item:hover {
-  background: hsl(var(--secondary));
-  color: hsl(var(--foreground));
-}
-
-.user-menu-enter-active,
-.user-menu-leave-active {
-  transition:
-    opacity 200ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-.user-menu-enter-from,
-.user-menu-leave-to {
-  opacity: 0;
-  transform: translateY(-8px) scale(0.97);
-}
-
 .icon-swap-enter-active,
 .icon-swap-leave-active {
   transition:

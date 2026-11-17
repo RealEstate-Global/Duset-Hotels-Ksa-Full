@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   CalendarPlus,
   CalendarX2,
-  Check,
   Copy,
   Mail,
   MapPin,
@@ -22,6 +21,7 @@ import { SITE } from '@/constants/site'
 import { downloadBookingIcs } from '@/features/booking/ics'
 import { formatMoney } from '@/features/booking/data/pricing'
 import ConfirmModal from '@/components/common/ConfirmModal.vue'
+import AppStatusPill from '@/components/common/AppStatusPill.vue'
 import { ref } from 'vue'
 
 const route = useRoute()
@@ -92,12 +92,12 @@ const formatDate = (iso: string) =>
           {{ booking.id }} <Copy :size="14" />
         </button>
       </div>
-      <span
-        class="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em]"
-        :class="booking.status === 'confirmed' ? 'bg-emerald-500/12 text-emerald-600 dark:text-emerald-400' : 'bg-rose-500/12 text-rose-500'"
-      >
-        <Check :size="12" :stroke-width="3.5" /> {{ t(`dashboard.bookings.status.${booking.status}`) }}
-      </span>
+      <AppStatusPill
+        size="md"
+        with-icon
+        :status="booking.status"
+        :label="t(`dashboard.bookings.status.${booking.status}`)"
+      />
     </div>
 
     <!-- Cancelled banner -->

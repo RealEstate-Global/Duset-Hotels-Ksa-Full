@@ -6,6 +6,9 @@ import { rooms } from '@/features/rooms/data/rooms'
 import { useBookingStore } from '@/features/booking/booking.store'
 import { useToast } from '@/composables/useToast'
 import ConfirmModal from '@/components/common/ConfirmModal.vue'
+import AppStatusPill from '@/components/common/AppStatusPill.vue'
+import AppBadge from '@/components/common/AppBadge.vue'
+import AppEmptyState from '@/components/common/AppEmptyState.vue'
 
 const { t, tm, locale } = useI18n()
 const { bookings, cancelBooking } = useBookingStore()
@@ -102,11 +105,7 @@ const confirmCancel = () => {
           @click="activeTab = tab.id"
         >
           {{ tab.label }}
-          <span
-            class="flex h-5 min-w-5 items-center justify-center rounded-full px-1 text-[9px] font-black"
-            :class="activeTab === tab.id ? 'bg-accent text-accent-foreground' : 'bg-secondary text-foreground/70'"
-            >{{ tab.count }}</span
-          >
+          <AppBadge :variant="activeTab === tab.id ? 'accent' : 'neutral'" :count="tab.count" />
         </button>
       </div>
     </div>
@@ -125,12 +124,12 @@ const confirmCancel = () => {
             class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
             loading="lazy"
           />
-          <span
-            class="absolute left-3 top-3 rounded-full px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.14em] text-white backdrop-blur"
-            :class="booking.status === 'confirmed' ? 'bg-emerald-600/85' : 'bg-rose-600/85'"
-          >
-            {{ t(`dashboard.bookings.status.${booking.status}`) }}
-          </span>
+          <AppStatusPill
+            variant="solid"
+            class="absolute left-3 top-3"
+            :status="booking.status"
+            :label="t(`dashboard.bookings.status.${booking.status}`)"
+          />
         </div>
         <div class="flex min-w-0 flex-1 flex-col p-4 sm:p-5">
           <div class="flex flex-wrap items-start justify-between gap-3">
@@ -176,13 +175,11 @@ const confirmCancel = () => {
     </div>
 
     <!-- Empty state -->
-    <div v-else class="mt-10 rounded-2xl border border-dashed border-border bg-secondary/25 px-6 py-16 text-center">
-      <Inbox :size="36" class="mx-auto text-muted-foreground" />
-      <p class="mx-auto mt-4 max-w-sm text-sm leading-6 text-muted-foreground">{{ t(`dashboard.bookings.empty.${activeTab}`) }}</p>
-      <RouterLink to="/booking" class="mt-6 inline-flex h-12 items-center gap-2 rounded-2xl bg-accent px-6 text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition hover:-translate-y-0.5">
+    <AppEmptyState v-else class="mt-10" :icon="Inbox" :title="t(`dashboard.bookings.empty.${activeTab}`)">
+      <RouterLink to="/booking" class="mt-2 inline-flex h-12 items-center gap-2 rounded-2xl bg-accent px-6 text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition hover:-translate-y-0.5">
         {{ t('dashboard.bookings.empty.cta') }} <ArrowRight :size="14" class="icon-flip" />
       </RouterLink>
-    </div>
+    </AppEmptyState>
 
     <ConfirmModal
       :open="cancelTarget !== null"

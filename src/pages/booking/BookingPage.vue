@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   ArrowRight,
   BedDouble,
-  CalendarDays,
   Check,
   ChevronRight,
   ConciergeBell,
@@ -23,6 +22,10 @@ import { priceBreakdown, formatMoney, promoDiscountRate, PROMO_CODES } from '@/f
 import { useBookingStore } from '@/features/booking/booking.store'
 import { useAuth } from '@/features/auth/useAuth'
 import { useToast } from '@/composables/useToast'
+import AppSelect from '@/components/common/AppSelect.vue'
+import type { SelectOption } from '@/components/common/AppSelect.vue'
+import AppDatePicker from '@/components/common/AppDatePicker.vue'
+import AppPageHeader from '@/components/common/AppPageHeader.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -140,7 +143,10 @@ const goTo = (target: 1 | 2 | 3) => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-const arrivalTimes = ['10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
+const arrivalTimes: SelectOption[] = ['10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'].map((time) => ({
+  label: time,
+  value: time,
+}))
 
 const submit = async () => {
   termsError.value = ''
@@ -178,15 +184,11 @@ const termsAccepted = ref(false)
 <template>
   <main class="pb-24 pt-[68px] md:pt-[104px]">
     <!-- Header -->
-    <section class="border-b border-border/70 bg-secondary/40 py-12 sm:py-16">
-      <div class="container-shell">
-        <p class="eyebrow">{{ t('booking.page.eyebrow') }}</p>
-        <h1 class="display-title mt-3 text-h2" v-html="t('booking.page.title')" />
-        <p class="mt-3 max-w-md text-body-md text-muted-foreground">
-          {{ t('booking.page.subline') }}
-        </p>
-      </div>
-    </section>
+    <AppPageHeader
+      :eyebrow="t('booking.page.eyebrow')"
+      :title="t('booking.page.title')"
+      :description="t('booking.page.subline')"
+    />
 
     <!-- Steps -->
     <div class="container-shell pt-8">
@@ -267,28 +269,22 @@ const termsAccepted = ref(false)
 
             <h2 class="mt-8 font-display text-xl font-semibold tracking-[-0.03em]">{{ t('booking.dates.heading') }}</h2>
             <div class="mt-4 grid gap-4 sm:grid-cols-2">
-              <label class="block rounded-2xl border border-border/80 bg-card p-4">
-                <span class="flex items-center gap-2 text-caption font-bold uppercase text-muted-foreground">
-                  <CalendarDays :size="13" class="text-accent" /> {{ t('booking.dates.checkIn') }}
-                </span>
-                <input
+              <div class="rounded-2xl border border-border/80 bg-card p-4">
+                <AppDatePicker
                   v-model="checkIn"
-                  type="date"
+                  :label="t('booking.dates.checkIn')"
                   :min="isoDate(new Date())"
-                  class="mt-2 w-full bg-transparent text-sm font-bold text-foreground outline-none"
+                  :aria-label="t('booking.dates.checkIn')"
                 />
-              </label>
-              <label class="block rounded-2xl border border-border/80 bg-card p-4">
-                <span class="flex items-center gap-2 text-caption font-bold uppercase text-muted-foreground">
-                  <CalendarDays :size="13" class="text-accent" /> {{ t('booking.dates.checkOut') }}
-                </span>
-                <input
+              </div>
+              <div class="rounded-2xl border border-border/80 bg-card p-4">
+                <AppDatePicker
                   v-model="checkOut"
-                  type="date"
+                  :label="t('booking.dates.checkOut')"
                   :min="minCheckOut"
-                  class="mt-2 w-full bg-transparent text-sm font-bold text-foreground outline-none"
+                  :aria-label="t('booking.dates.checkOut')"
                 />
-              </label>
+              </div>
             </div>
 
             <!-- Guests steppers -->
@@ -340,16 +336,16 @@ const termsAccepted = ref(false)
             <form v-if="step === 2" class="mt-5 grid gap-4" @submit.prevent="goTo(3)">
               <div>
                 <label for="guest-name" class="text-caption font-bold uppercase text-muted-foreground">{{ t('booking.details.fullName') }}</label>
-                <input id="guest-name" v-model="guestName" type="text" autocomplete="name" :placeholder="t('booking.details.fullNamePlaceholder')" class="booking-input mt-1.5" />
+                <input id="guest-name" v-model="guestName" type="text" autocomplete="name" :placeholder="t('booking.details.fullNamePlaceholder')" class="app-field mt-1.5" />
               </div>
               <div class="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label for="guest-email" class="text-caption font-bold uppercase text-muted-foreground">{{ t('booking.details.email') }}</label>
-                  <input id="guest-email" v-model="email" type="email" autocomplete="email" :placeholder="t('booking.details.emailPlaceholder')" class="booking-input mt-1.5" dir="ltr" />
+                  <input id="guest-email" v-model="email" type="email" autocomplete="email" :placeholder="t('booking.details.emailPlaceholder')" class="app-field mt-1.5" dir="ltr" />
                 </div>
                 <div>
                   <label for="guest-phone" class="text-caption font-bold uppercase text-muted-foreground">{{ t('booking.details.phone') }}</label>
-                  <input id="guest-phone" v-model="phone" type="tel" autocomplete="tel" :placeholder="t('booking.details.phonePlaceholder')" class="booking-input mt-1.5" dir="ltr" />
+                  <input id="guest-phone" v-model="phone" type="tel" autocomplete="tel" :placeholder="t('booking.details.phonePlaceholder')" class="app-field mt-1.5" dir="ltr" />
                 </div>
               </div>
               <p v-if="isAuthenticated" class="flex items-center gap-2 rounded-xl border border-accent/25 bg-accent/5 px-4 py-2.5 text-[11px] font-semibold text-accent">
@@ -357,9 +353,13 @@ const termsAccepted = ref(false)
               </p>
               <div>
                 <label for="arrival-time" class="text-caption font-bold uppercase text-muted-foreground">{{ t('booking.details.arrivalTime') }}</label>
-                <select id="arrival-time" v-model="arrivalTime" class="booking-input mt-1.5">
-                  <option v-for="time in arrivalTimes" :key="time" :value="time">{{ time }}</option>
-                </select>
+                <AppSelect
+                  id="arrival-time"
+                  v-model="arrivalTime"
+                  :options="arrivalTimes"
+                  :aria-label="t('booking.details.arrivalTime')"
+                  class="mt-1.5"
+                />
               </div>
               <div>
                 <label for="requests" class="text-caption font-bold uppercase text-muted-foreground">{{ t('booking.details.requests') }}</label>
@@ -512,32 +512,6 @@ const termsAccepted = ref(false)
 </template>
 
 <style scoped>
-.booking-input {
-  width: 100%;
-  border-radius: 0.85rem;
-  border: 1px solid hsl(var(--border) / 0.8);
-  background: hsl(var(--background) / 0.6);
-  padding: 0 0.9rem;
-  height: 48px;
-  font-size: 0.875rem;
-  color: hsl(var(--foreground));
-  outline: none;
-  transition:
-    border-color 200ms,
-    box-shadow 200ms,
-    background 200ms;
-}
-textarea.booking-input {
-  height: auto;
-  min-height: 96px;
-  padding-block: 0.75rem;
-}
-.booking-input:focus {
-  border-color: hsl(var(--accent) / 0.6);
-  background: hsl(var(--background));
-  box-shadow: 0 0 0 3px hsl(var(--accent) / 0.12);
-}
-
 .step-panel-enter-active,
 .step-panel-leave-active {
   transition:

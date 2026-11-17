@@ -15,6 +15,9 @@ import { rooms } from '@/features/rooms/data/rooms'
 import { useBookingStore } from '@/features/booking/booking.store'
 import { useAuth } from '@/features/auth/useAuth'
 import { SITE } from '@/constants/site'
+import AppStatusPill from '@/components/common/AppStatusPill.vue'
+import AppStatCard from '@/components/common/AppStatCard.vue'
+import AppButton from '@/components/common/AppButton.vue'
 
 const { t, tm, locale } = useI18n()
 const { user } = useAuth()
@@ -56,36 +59,17 @@ const formatDate = (iso: string) =>
         <h1 class="display-title mt-2 text-h3">{{ t('dashboard.overview.greeting', { name: user?.name }) }}</h1>
         <p class="mt-1.5 max-w-md text-sm leading-6 text-muted-foreground">{{ t('dashboard.overview.subline') }}</p>
       </div>
-      <RouterLink
-        to="/booking"
-        class="inline-flex h-12 shrink-0 items-center gap-2 rounded-2xl bg-accent px-6 text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition hover:-translate-y-0.5 hover:shadow-float"
-      >
+      <AppButton to="/booking" variant="accent" size="lg">
         <CalendarDays :size="16" /> {{ t('dashboard.overview.bookRoom') }}
-      </RouterLink>
+      </AppButton>
     </div>
 
     <!-- Stats -->
     <div class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
-      <div class="dash-stat">
-        <span class="dash-stat-icon bg-sky-500/12 text-sky-500"><CalendarDays :size="19" /></span>
-        <p class="dash-stat-value">{{ next ? daysUntilNext : t('dashboard.overview.stats.nextStayNone') }}</p>
-        <p class="dash-stat-label">{{ t('dashboard.overview.stats.nextStay') }}</p>
-      </div>
-      <div class="dash-stat">
-        <span class="dash-stat-icon bg-violet-500/12 text-violet-500"><Moon :size="19" /></span>
-        <p class="dash-stat-value">{{ nights }}</p>
-        <p class="dash-stat-label">{{ t('dashboard.overview.stats.nightsBooked') }}</p>
-      </div>
-      <div class="dash-stat">
-        <span class="dash-stat-icon bg-amber-500/12 text-amber-500"><Sparkles :size="19" /></span>
-        <p class="dash-stat-value">{{ points.toLocaleString() }}</p>
-        <p class="dash-stat-label">{{ t('dashboard.overview.stats.points') }}</p>
-      </div>
-      <div class="dash-stat">
-        <span class="dash-stat-icon bg-accent/15 text-accent"><Star :size="19" /></span>
-        <p class="dash-stat-value">{{ t(`dashboard.overview.stats.${tier.key}`) }}</p>
-        <p class="dash-stat-label">{{ t('dashboard.overview.stats.tier') }}</p>
-      </div>
+      <AppStatCard :icon="CalendarDays" icon-class="bg-sky-500/12 text-sky-500" :value="next ? daysUntilNext : t('dashboard.overview.stats.nextStayNone')" :label="t('dashboard.overview.stats.nextStay')" />
+      <AppStatCard :icon="Moon" icon-class="bg-violet-500/12 text-violet-500" :value="nights" :label="t('dashboard.overview.stats.nightsBooked')" />
+      <AppStatCard :icon="Sparkles" icon-class="bg-amber-500/12 text-amber-500" :value="points.toLocaleString()" :label="t('dashboard.overview.stats.points')" />
+      <AppStatCard :icon="Star" icon-class="bg-accent/15 text-accent" :value="t(`dashboard.overview.stats.${tier.key}`)" :label="t('dashboard.overview.stats.tier')" />
     </div>
 
     <!-- Loyalty progress -->
@@ -162,12 +146,7 @@ const formatDate = (iso: string) =>
               <p class="truncate text-sm font-bold">{{ roomName(booking.roomId) }}</p>
               <p class="mt-0.5 text-[11px] text-muted-foreground" dir="ltr">{{ formatDate(booking.checkIn) }} → {{ formatDate(booking.checkOut) }}</p>
             </div>
-            <span
-              class="shrink-0 rounded-full px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.14em]"
-              :class="booking.status === 'confirmed' ? 'bg-emerald-500/12 text-emerald-600 dark:text-emerald-400' : 'bg-rose-500/12 text-rose-500'"
-            >
-              {{ t(`dashboard.bookings.status.${booking.status}`) }}
-            </span>
+            <AppStatusPill :status="booking.status" :label="t(`dashboard.bookings.status.${booking.status}`)" />
           </RouterLink>
         </div>
       </section>
@@ -207,46 +186,6 @@ const formatDate = (iso: string) =>
 </template>
 
 <style scoped>
-.dash-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  border-radius: 1.1rem;
-  border: 1px solid hsl(var(--border) / 0.7);
-  background: hsl(var(--card));
-  padding: 0.9rem;
-  transition:
-    transform 250ms,
-    box-shadow 250ms;
-}
-.dash-stat:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px -24px hsl(var(--accent) / 0.35);
-}
-.dash-stat-icon {
-  display: flex;
-  height: 2.4rem;
-  width: 2.4rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.7rem;
-}
-.dash-stat-value {
-  margin-top: 0.35rem;
-  font-family: 'DM Sans', ui-sans-serif;
-  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1;
-}
-.dash-stat-label {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: hsl(var(--muted-foreground));
-  font-weight: 700;
-}
-
 .quick-action {
   display: flex;
   align-items: center;

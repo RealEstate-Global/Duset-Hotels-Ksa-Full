@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import { useId } from 'vue'
+
 const model = defineModel<boolean>({ required: true })
+const inputId = useId()
 withDefaults(
   defineProps<{
     label?: string
     description?: string
     disabled?: boolean
+    name?: string
   }>(),
   { disabled: false },
 )
@@ -13,10 +17,12 @@ withDefaults(
 <template>
   <label class="app-toggle" :class="{ 'app-toggle-disabled': disabled }">
     <input
+      :id="inputId"
       v-model="model"
       type="checkbox"
       role="switch"
       class="app-toggle-input"
+      :name="name"
       :disabled="disabled"
       :aria-label="label"
     />

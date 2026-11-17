@@ -140,7 +140,7 @@ const goTo = (target: 1 | 2 | 3) => {
   }
   if (target === 3 && !validateDetails()) return
   step.value = target
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo({ top: 0, behavior: 'instant' })
 }
 
 const arrivalTimes: SelectOption[] = ['10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'].map((time) => ({
@@ -409,7 +409,7 @@ const termsAccepted = ref(false)
 
               <!-- Terms -->
               <label class="flex cursor-pointer items-start gap-3 rounded-2xl border p-4 transition" :class="termsError ? 'border-rose-500/50 bg-rose-500/5' : 'border-border/80 hover:border-accent/50'">
-                <input v-model="termsAccepted" type="checkbox" class="mt-0.5 h-5 w-5 shrink-0 accent-accent" />
+                <input id="terms-accepted" v-model="termsAccepted" type="checkbox" name="termsAccepted" class="mt-0.5 h-5 w-5 shrink-0 accent-accent" />
                 <span class="text-sm leading-6 text-foreground/85">
                   {{ t('booking.review.terms') }}
                   <RouterLink to="/terms-and-conditions" class="link-underline font-bold text-accent" @click.stop>{{ t('booking.review.termsLink') }}</RouterLink>

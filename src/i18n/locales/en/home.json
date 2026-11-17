@@ -1,0 +1,155 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "eyebrow": "Duset Hotel Suites · Riyadh",
+        "title": "The Most<br /><span class=\"text-on-dark-accent\">Comfortable</span> Stay.",
+        "alt": "Duset Hotel Suites main entrance at dusk"
+      },
+      {
+        "eyebrow": "71 Luxury Rooms & Suites",
+        "title": "A Blissful<br /><span class=\"text-on-dark-accent\">Staying</span> Experience.",
+        "alt": "Deluxe room at Duset Hotel Suites with king bed"
+      },
+      {
+        "eyebrow": "Heart of Nuzha District",
+        "title": "Find Peace<br />& <span class=\"text-on-dark-accent\">Quiet</span> Here.",
+        "alt": "Quiet suite living area at Duset Hotel Suites"
+      }
+    ],
+    "subline": "71 luxury rooms in the heart of Riyadh with 24hrs service — minutes from Al Nakheel Mall, Granada Market and Riyadh International Exhibition Center.",
+    "ratingLabel": "{rating} · {reviews} reviews",
+    "locationLabel": "Nuzha District, Riyadh",
+    "chooseSlide": "Choose slide",
+    "prevSlide": "Previous slide",
+    "nextSlide": "Next slide"
+  },
+  "stats": [
+    { "value": "71", "suffix": "", "label": "luxury rooms & suites" },
+    { "value": "24", "suffix": "hrs", "label": "service at reception" },
+    { "value": "5.0", "suffix": "", "label": "2000+ Tripadvisor reviews" },
+    { "value": "23", "suffix": "km", "label": "to King Khalid Airport" }
+  ],
+  "aboutPreview": {
+    "eyebrow": "About Our Hotel",
+    "title": "The heart<br />of <span class=\"text-accent\">Riyadh.</span>",
+    "copy": "Duset Hotel Suites is located in the heart of Riyadh — close to major shopping destinations in Riyadh: Al Nakheel Mall, Granada Market, Palm Market, Hayat Mall and the surrounding shops with eateries. Riyadh International Exhibition Center is a 5-minute drive away. The nearest airport, King Khalid Airport, is 23 km from the property. We are the providers of 71 luxury rooms with 24hrs service.",
+    "link": "Discover more about Duset",
+    "badge": "Heart of Riyadh",
+    "imageAlt": "Duset Hotel Suites exterior"
+  },
+  "whyDuset": {
+    "eyebrow": "Why Duset",
+    "title": "Comfort,<br /><span class=\"text-accent\">every hour.</span>",
+    "copy": "From rooftop pools to 24h in-room dining — every detail is designed to make your stay in Riyadh effortless and memorable.",
+    "imageAlt": "Duset Hotel Suites suite interior",
+    "imageBadge": "5.0 rated · 2000+ reviews",
+    "highlights": [
+      {
+        "title": "Prime location",
+        "copy": "Heart of Nuzha District — 5 minutes from Riyadh International Exhibition Center."
+      },
+      {
+        "title": "71 luxury rooms",
+        "copy": "Deluxe Rooms and suites with full kitchens, king beds and panorama views."
+      },
+      {
+        "title": "Free high-speed WiFi",
+        "copy": "Stay connected across the whole hotel — work or stream without limits."
+      },
+      {
+        "title": "24hrs front desk",
+        "copy": "Early check-in on request, 24h in-room dining and room service any time."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Hotel Services",
+    "title": "Every corner,<br /><span class=\"text-inverse-accent\">cared for.</span>",
+    "subline": "From the main entrance to your room — warm hospitality and 24hrs service at every step of your stay.",
+    "items": [
+      { "name": "Main Entrance", "alt": "Duset Hotel Suites main entrance" },
+      { "name": "Restaurant", "alt": "Duset Hotel Suites restaurant" },
+      { "name": "Reception", "alt": "Duset Hotel Suites reception" },
+      { "name": "Coffee Shop", "alt": "Duset Hotel Suites coffee shop" },
+      { "name": "Entrance Garden", "alt": "Duset Hotel Suites entrance garden" },
+      { "name": "Deluxe Living Room", "alt": "Duset Hotel Suites deluxe living room" }
+    ]
+  },
+  "facilities": {
+    "eyebrow": "Why Choose Us",
+    "title": "Best Hotel<br /><span class=\"text-accent\">Facilities.</span>",
+    "copy": "Discover unparalleled comfort and luxury with the best hotel facilities designed to cater to every need. From state-of-the-art fitness centers to exquisite dining options and spacious accommodations, we ensure a memorable stay — with top-notch amenities and exceptional service that redefine hospitality excellence.",
+    "items": [
+      "24 Hour Services",
+      "Free WiFi",
+      "Fitness Zone",
+      "Locker Room",
+      "Room Cleaning",
+      "Safe & Secure"
+    ],
+    "images": [
+      { "alt": "Duset Hotel Suites facilities — gym and fitness area" },
+      { "alt": "Duset Hotel Suites facilities — relaxation area" },
+      { "alt": "Duset Hotel Suites facilities — hotel interior" }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "Book your stay<br />in <span class=\"text-inverse-accent\">three steps.</span>",
+    "subline": "From browsing rooms to front-door welcome — reserving at Duset Hotel Suites is simple, secure and fast.",
+    "steps": [
+      {
+        "title": "Choose your room",
+        "copy": "Browse Deluxe Rooms, One Bed Room Apartments and two-bedroom suites — pick the space that fits your stay."
+      },
+      {
+        "title": "Book in minutes",
+        "copy": "Reserve securely through our booking engine — no prepayment needed, with instant confirmation and proof of booking."
+      },
+      {
+        "title": "Check in & unwind",
+        "copy": "Arrive from 10 AM, show your ID at reception and enjoy 24hrs service, free WiFi and room dining all day."
+      }
+    ],
+    "badge": "Book now, pay at the hotel"
+  },
+  "testimonials": {
+    "eyebrow": "Guest Stories",
+    "title": "Guests say<br />about our hotel.",
+    "reviewsLabel": "{rating} · {reviews} reviews",
+    "verifiedRole": "Guest · Verified review",
+    "prev": "Previous testimonial",
+    "next": "Next testimonial",
+    "items": [
+      {
+        "quote": "Everything was delightful, rooms are equipped with kitchen and bathroom was big. Breakfast was room service which allows you to enjoy the room. Mr İslam with his other co workers were very helpful.",
+        "name": "Sema Özkan"
+      },
+      {
+        "quote": "Very good and clean rooms for the price. The staff was very helpful and the service was extraordinary. The receptionist Mr. Islam was very understanding and gave us the room early since we reached before time.",
+        "name": "Neer Savla"
+      },
+      {
+        "quote": "I had an amazing time in the hotel its clean and the service is very good the location is also very good as it's surrounded by coffee shops and supermarkets thank your for making my stay and amazing experience.",
+        "name": "Wala'a Murshid"
+      }
+    ]
+  },
+  "attractionsPreview": {
+    "eyebrow": "Neighborhood",
+    "title": "Explore<br /><span class=\"text-accent\">Riyadh.</span>",
+    "copy": "Your ideal basecamp for local exploration — malls, markets and the Riyadh Exhibition Centre, all minutes away.",
+    "link": "View all attractions"
+  },
+  "faqPreview": {
+    "eyebrow": "Good to know",
+    "title": "Questions,<br />answered.",
+    "description": "Everything you need to know before your stay — check-in, amenities, policies and more.",
+    "viewAll": "View all {count} FAQs"
+  },
+  "cta": {
+    "title": "Ready to stay<br /><span class=\"opacity-65\">the Duset way?</span>",
+    "copy": "Reserve your room now — book with no prepayment and pay at the hotel."
+  }
+}

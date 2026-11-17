@@ -1,0 +1,170 @@
+{
+  "sidebar": {
+    "main": "Main Menu",
+    "account": "Account",
+    "overview": "Overview",
+    "myBookings": "My Bookings",
+    "payments": "Payments",
+    "profile": "Profile",
+    "signOut": "Sign Out",
+    "viewSite": "Back to website"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "empty": "You’re all caught up.",
+    "unread": "{count} unread",
+    "bookingConfirmedTitle": "Booking confirmed",
+    "bookingConfirmedBody": "Your stay at Duset Hotel Suites is confirmed. See you soon!",
+    "welcomeTitle": "Welcome to Duset Rewards",
+    "welcomeBody": "Earn 50 points every night. 2,000 points unlock Gold perks.",
+    "poolTitle": "Rooftop pool maintenance",
+    "poolBody": "Pools close Dec 5 for scheduled deep cleaning. Sorry for the inconvenience."
+  },
+  "overview": {
+    "greeting": "Welcome back, {name}",
+    "subline": "Here’s what’s happening with your stays at Duset Hotel Suites.",
+    "bookRoom": "Book a room",
+    "stats": {
+      "nextStay": "Next stay",
+      "nextStayValue": "{days} days",
+      "nextStayNone": "—",
+      "nightsBooked": "Nights booked",
+      "nightsBookedValue": "{count}",
+      "points": "Duset points",
+      "pointsValue": "{count}",
+      "tier": "Member tier",
+      "tierGold": "Gold",
+      "tierSilver": "Silver",
+      "tierPlatinum": "Platinum"
+    },
+    "nextStay": {
+      "title": "Your next stay",
+      "manage": "Manage booking",
+      "status": "Confirmed",
+      "noUpcoming": "No upcoming stays",
+      "noUpcomingSub": "Book your next escape to Riyadh — breakfast and pool included.",
+      "bookNow": "Book now"
+    },
+    "recent": {
+      "title": "Recent bookings",
+      "viewAll": "View all",
+      "empty": "No bookings yet"
+    },
+    "quickActions": {
+      "title": "Quick actions",
+      "bookRoom": "Book a room",
+      "bookRoomSub": "Instant confirmation",
+      "contact": "Concierge",
+      "contactSub": "Chat on WhatsApp",
+      "amenities": "Amenities",
+      "amenitiesSub": "Pools, gym & more"
+    }
+  },
+  "bookings": {
+    "title": "My Bookings",
+    "subline": "All your stays in one place — past, present and future.",
+    "tabs": {
+      "all": "All",
+      "upcoming": "Upcoming",
+      "past": "Past",
+      "cancelled": "Cancelled"
+    },
+    "status": {
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled"
+    },
+    "card": {
+      "guests": "{count} guests",
+      "nights": "{count} {label}",
+      "view": "View details",
+      "cancel": "Cancel",
+      "bookAgain": "Book again"
+    },
+    "empty": {
+      "all": "No bookings yet — your stays will appear here.",
+      "upcoming": "No upcoming stays.",
+      "past": "No past stays yet.",
+      "cancelled": "No cancelled bookings.",
+      "cta": "Book your next stay"
+    },
+    "cancelConfirmTitle": "Cancel this booking?",
+    "cancelConfirmBody": "Your reservation will be released and the room returned to inventory. This action can’t be undone.",
+    "cancelConfirmLabel": "Yes, cancel",
+    "cancelKeep": "Keep booking",
+    "cancelledToast": "Booking cancelled"
+  },
+  "detail": {
+    "title": "Booking details",
+    "refCopied": "Reference copied",
+    "guestInfo": "Guest information",
+    "priceBreakdown": "Price breakdown",
+    "yourRoom": "Your room",
+    "nights": "{count} nights",
+    "ratePerNight": "{rate} / night",
+    "vat": "VAT (15%)",
+    "discount": "Promo discount",
+    "total": "Total — pay at hotel",
+    "actions": {
+      "cancelBooking": "Cancel booking",
+      "contactHotel": "Call the concierge",
+      "getDirections": "Get directions",
+      "addToCalendar": "Add to calendar",
+      "viewInvoice": "Download summary"
+    },
+    "cancelledBanner": "This booking was cancelled."
+  },
+  "payments": {
+    "title": "Payment Methods",
+    "subline": "How you pay — fast, secure checkout at the hotel. Nothing is charged online.",
+    "savedCards": "Saved cards",
+    "default": "Default",
+    "setDefault": "Set as default",
+    "remove": "Remove",
+    "removeTitle": "Remove this card?",
+    "removeBody": "The card will be removed from your Duset account. You can add it again any time.",
+    "removeLabel": "Remove card",
+    "removeKeep": "Keep card",
+    "removedToast": "Card removed",
+    "defaultUpdatedToast": "Default card updated",
+    "addedToast": "Card added",
+    "addNew": "Add new card",
+    "cardNumber": "Card number",
+    "cardNumberPlaceholder": "1234 5678 9012 3456",
+    "nameOnCard": "Name on card",
+    "nameOnCardPlaceholder": "e.g. AHMED AL-QAHTANI",
+    "expiry": "Expiry",
+    "expiryPlaceholder": "MM / YY",
+    "cvv": "CVV",
+    "addCard": "Add card",
+    "secureNote": "Cards are validated in your browser only and never leave this device in this demo.",
+    "visa": "Visa",
+    "mastercard": "Mastercard"
+  },
+  "profile": {
+    "title": "My Profile",
+    "subline": "Keep your details fresh — we use them for check-in and rewards.",
+    "personalInfo": "Personal information",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "memberSince": "Member since",
+    "save": "Save changes",
+    "savedToast": "Profile saved",
+    "preferences": "Preferences",
+    "emailOffers": "Email me exclusive offers",
+    "emailOffersSub": "One email per week, max. Unsubscribe anytime.",
+    "smsReminders": "SMS reminders before check-in",
+    "smsRemindersSub": "A friendly nudge 24h before you arrive.",
+    "appearance": "Appearance",
+    "language": "Language",
+    "dangerZone": "Demo zone",
+    "clearDemoData": "Reset demo data",
+    "clearDemoDataSub": "Restores the original demo bookings and cards.",
+    "clearConfirmTitle": "Reset demo data?",
+    "clearConfirmBody": "Your locally stored bookings and cards will be reset to the original demo set.",
+    "clearConfirmLabel": "Reset",
+    "clearKeep": "Keep",
+    "clearedToast": "Demo data reset"
+  }
+}

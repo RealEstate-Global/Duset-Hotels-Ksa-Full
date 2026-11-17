@@ -1,0 +1,24 @@
+{
+  "topBar": {
+    "call": "Call Duset Hotel Suites",
+    "email": "Email Duset Hotel Suites"
+  },
+  "links": {
+    "home": "Home",
+    "rooms": "Rooms",
+    "amenities": "Amenities",
+    "gallery": "Gallery",
+    "attractions": "Attractions",
+    "about": "About Us",
+    "contact": "Contact",
+    "faq": "FAQ's"
+  },
+  "primaryNav": "Primary navigation",
+  "mobileNav": "Mobile navigation",
+  "homeAria": "Duset Hotel Suites — home",
+  "toggleTheme": "Toggle color theme",
+  "switchToLight": "Switch to light mode",
+  "switchToDark": "Switch to dark mode",
+  "switchLanguage": "التبديل إلى العربية",
+  "languageLabel": "العربية"
+}

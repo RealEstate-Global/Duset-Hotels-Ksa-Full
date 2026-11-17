@@ -1,0 +1,160 @@
+{
+  "aside": {
+    "questions": "Questions about this policy?",
+    "reachUs": "You can reach us any time:",
+    "call": "Call",
+    "email": "Email"
+  },
+  "privacy-policy": {
+    "eyebrow": "Privacy Policy",
+    "title": "Your data,<br /><span class=\"text-accent\">protected.</span>",
+    "intro": "Duset Hotel Suites (“We,” “Us,” “Our”) has measures in place to protect your Personal Data. We ensure that your Personal Data is handled in accordance with Personal Data Protection law at our property address in Riyadh.",
+    "sections": [
+      {
+        "heading": "Definitions",
+        "paragraphs": [
+          "Personal Data: means as specified in “Types of Personal Data Collected” below.",
+          "Data Controller: means a natural or legal person who has powers and duties to make decisions regarding the collection, storage, usage and disclosure of Personal Data.",
+          "Data Processor: means a natural or legal person who processes the collection, storage, usage or disclosure of Personal Data according to the order or on behalf of the Data Controller; however, such natural or legal person who processes such activities is not the Data Controller.",
+          "Data Subject: means any individual person who can be identified, directly or indirectly, via Personal Data.",
+          "Person: means a natural person.",
+          "DPO: Data Protection Officer."
+        ]
+      },
+      {
+        "heading": "Types of Personal Data Collected",
+        "paragraphs": [
+          "Personal data refers to information about an individual from which that person can be identified whether by direct or indirect means. However, Personal Data does not include information of deceased persons and anonymous data."
+        ]
+      },
+      {
+        "heading": "Personal Data Includes",
+        "paragraphs": [
+          "Identity Data: data about individuals which can be used to identify a specific individual, whether by a direct or an indirect means such as name, surname, date/month/year of birth, gender, ID number, driving license number, passport number, and marital status.",
+          "Contact Data: such as email address and phone number.",
+          "Sensitive Data: such as ethnicity, beliefs, religion, health information (including food and general allergies), and biometric data, including criminal history data. In the event that we have unintentionally received it and have no intention to collect such data, and the data is not intended to be used to facilitate your stays at our hotel, we will not process your sensitive data.",
+          "Financial and Transactional Data: such as bank account number, credit card number and debit card number, monthly income, and payment information."
+        ]
+      },
+      {
+        "heading": "Exercising Your Rights",
+        "paragraphs": [
+          "If you wish to exercise data subject rights or if you have any questions or complaints, you can contact us via:",
+          "Duset Hotel Suites — 12473, Saudi Arabia, Riyadh, Nuzha District, Prince Muqrin Bin Abdelaziz St, No 3216",
+          "Email: duset.hotel@gmail.com"
+        ]
+      }
+    ]
+  },
+  "refund-policy": {
+    "eyebrow": "Refund Policy",
+    "title": "Fair &<br /><span class=\"text-accent\">transparent.</span>",
+    "intro": "Cancellations and refunds at Duset Hotel Suites are handled according to the following policy. The policy of the rate you booked always applies first.",
+    "sections": [
+      {
+        "heading": "Full Refund",
+        "paragraphs": [
+          "Cancellations made up to 48 hours before the check-in date qualify for a full refund, minus processing fees."
+        ]
+      },
+      {
+        "heading": "Partial Refund",
+        "paragraphs": [
+          "Cancellations made within 24–48 hours before check-in incur a 50% charge of the booking amount."
+        ]
+      },
+      {
+        "heading": "No Refund",
+        "paragraphs": ["Cancellations within 24 hours of check-in or no-shows are non-refundable."]
+      },
+      {
+        "heading": "Early Departures",
+        "paragraphs": ["Guests departing earlier than scheduled will not be refunded for the remaining nights."]
+      },
+      {
+        "heading": "Special Promotions",
+        "paragraphs": [
+          "Bookings under special promotional or discounted rates are non-refundable unless stated in the promotion terms."
+        ]
+      },
+      {
+        "heading": "Changes to Reservation Dates",
+        "paragraphs": [
+          "Date changes are subject to availability and may incur additional charges or rate adjustments."
+        ]
+      },
+      {
+        "heading": "Non-Refundable Rates",
+        "paragraphs": [
+          "Some rates or packages may be non-refundable regardless of the cancellation date; these will be noted at booking."
+        ]
+      },
+      {
+        "heading": "Group Bookings",
+        "paragraphs": [
+          "Refund policies for group bookings may vary. Please refer to your group contract for specific terms or contact our team for details."
+        ]
+      },
+      {
+        "heading": "Force Majeure",
+        "paragraphs": [
+          "In case of unforeseen events such as natural disasters or government restrictions, Duset Hotel Suites reserves the right to offer alternative solutions in place of refunds, subject to policy adjustments."
+        ]
+      },
+      {
+        "heading": "Processing Time",
+        "paragraphs": [
+          "Refunds may take up to 7–10 business days to process, depending on the payment method and financial institution."
+        ]
+      }
+    ]
+  },
+  "terms-and-conditions": {
+    "eyebrow": "Terms & Conditions",
+    "title": "The fine<br /><span class=\"text-accent\">print.</span>",
+    "intro": "Please read these Terms and Conditions carefully — they incorporate the basis on which bookings for Duset Hotel Suites are accepted. The Terms and Conditions below are for bookings made directly via the hotel’s websites and payments via payment gateway systems through Waetiya Limited. Registered address: 12473, Saudi Arabia, Riyadh, Nuzha District, Prince Muqrin Bin Abdelaziz St, No 3216.",
+    "sections": [
+      {
+        "heading": "Use of this Site",
+        "paragraphs": [
+          "By using this site, you agree to be bound by these terms and conditions.",
+          "We may revise these terms & conditions from time to time by updating this posting. The revised terms will take effect when they are posted.",
+          "Your use of some parts or features of the site may be governed by additional terms and conditions. Where this is the case you will be notified accordingly of those additional terms and conditions."
+        ]
+      },
+      {
+        "heading": "Early Check-In",
+        "paragraphs": ["On request. Please contact the Front Office. Additional fees may be applied."]
+      },
+      {
+        "heading": "Early Departure",
+        "paragraphs": [
+          "The property reserves the right to charge an early departure fee in the event a guest departs earlier than the original departure date."
+        ]
+      },
+      {
+        "heading": "Cancellation Policy",
+        "paragraphs": [
+          "Each rate booked at Duset Hotel Suites is subject to a Cancellation Policy. Failure to check in on the reserved arrival date will incur a penalty charge as detailed in the Cancellation Policy of the rate booked.",
+          "We reserve the right to cancel or modify reservations under the circumstances where it appears that a customer has provided an invalid credit card, engaged in fraudulent or inappropriate activity, or the reservations contain or resulted from a mistake or error. In addition, we also reserve the right to cancel or amend bookings if they do not adhere to our terms & conditions.",
+          "If a guest chooses to shorten their stay or check out early, a penalty charge will apply, as detailed in the Cancellation Policy associated with the rate booked.",
+          "In the cases of the aforementioned booking cancellations, Duset Hotel Suites has no obligation to guarantee new available bookings or best rates. A new booking at the best available rate will need to be made by the guest at the time of the new reservation."
+        ]
+      },
+      {
+        "heading": "Proof of Payment",
+        "paragraphs": [
+          "As a condition of using this website, you agree to provide proof of payment to the hotel reservations department within 48 hours of the time of booking and will indicate the reservation confirmation number on the proof of payment.",
+          "You will be fully responsible for any banking fees and/or costs required to complete the bank funds transaction(s).",
+          "Furthermore, you acknowledge that the reservation may be canceled by the hotel if proof of payment is not submitted to the hotel within the 48-hour notice period. You will be responsible for any cancellation or no-show penalties that might be incurred and hereby acknowledge that booking and personal contact information provided is correct for the hotel’s validation purposes."
+        ]
+      },
+      {
+        "heading": "Linking to this Website",
+        "paragraphs": [
+          "The following organizations may link to our website without prior written approval: Government agencies; Search engines; News organizations; Online directory distributors may link to our website in the same manner as they hyperlink to the websites of other listed businesses; and system-wide accredited businesses — except soliciting non-profit organizations, charity shopping malls, and charity fundraising groups, which may not hyperlink to our website."
+        ]
+      }
+    ]
+  }
+}

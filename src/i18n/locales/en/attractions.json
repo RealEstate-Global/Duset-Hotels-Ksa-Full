@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Attractions",
+  "title": "Your ideal basecamp<br /><span class=\"text-accent\">for Riyadh.</span>",
+  "subline": "Malls, markets, hospitals and the Riyadh Exhibition Centre — all minutes from Duset Hotel Suites.",
+  "tapToOpen": "Tap any attraction to open it in Google Maps. Need directions from the hotel?",
+  "getDirections": "Get directions",
+  "openInMaps": "Open {name} in Google Maps",
+  "items": {
+    "dumasaqqs": "Dumasaqqs",
+    "cenomiMall": "Cenomi Mall",
+    "alhammadiHospital": "Alhammadi Hospital",
+    "manuelMarket": "Manuel Market",
+    "riyadhExhibitionCentre": "Riyadh Exhibition Centre",
+    "tamimmiMarket": "Tamimmi Market",
+    "garanadaMall": "Garanada Mall",
+    "panoramaMall": "Panorama Mall",
+    "ministerOfEducation": "Minister of Education"
+  }
+}

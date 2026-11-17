@@ -1,0 +1,34 @@
+{
+  "eyebrow": "وسائل الراحة",
+  "title": "كل شيء<br /><span class=\"text-accent\">مشمول.</span>",
+  "subline": "من مسابح السطح إلى خدمة الطعام في الغرف على مدار الساعة — جميع وسائل الراحة جزء من إقامتك في دوست.",
+  "allIncluded": "جميع وسائل الراحة جزء من إقامتك",
+  "items": {
+    "freeWifi": "واي فاي مجاني",
+    "roomService": "خدمة الغرف",
+    "dailyHousekeeping": "تنظيف يومي للغرف",
+    "freeParking": "مواقف مجانية",
+    "cableTv": "تلفزيون كابل",
+    "bathroom": "حمّام",
+    "airConditioner": "تكييف هواء",
+    "welcomeDrinks": "مشروبات ترحيبية",
+    "shower": "دش",
+    "laundry": "غسيل الملابس",
+    "refrigerator": "ثلاجة",
+    "microwave": "ميكروويف",
+    "swimmingPool": "مسبح",
+    "restaurant": "مطعم",
+    "beds": "أسرّة",
+    "kingSizedBeds": "أسرّة كينج",
+    "iron": "مكواة",
+    "guestLaundry": "مغسلة ضيوف داخل الفندق",
+    "coffeeTea": "قهوة وشاي داخل الغرفة",
+    "coffeeMachine": "آلة قهوة"
+  },
+  "coreIncluded": "تحتوي كل غرفة على",
+  "pools": {
+    "title": "مسبحان على السطح",
+    "body": "في الطابق السادس عشر، بإطلالة بانورامية على الرياض — مشمولة في إقامتك.",
+    "cta": "احجز غرفة"
+  }
+}

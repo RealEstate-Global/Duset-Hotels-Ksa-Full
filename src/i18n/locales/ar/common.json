@@ -1,0 +1,25 @@
+{
+  "brand": {
+    "name": "دوست للأجنحة الفندقية"
+  },
+  "actions": {
+    "bookNow": "احجز الآن",
+    "exploreRooms": "استكشف الغرف",
+    "viewAll": "عرض الكل",
+    "learnMore": "اكتشف المزيد",
+    "back": "رجوع",
+    "close": "إغلاق",
+    "send": "إرسال",
+    "readMore": "اكتشف المزيد",
+    "getDirections": "احصل على الاتجاهات",
+    "openInGoogleMaps": "افتح في خرائط جوجل",
+    "readMoreOnTripadvisor": "اقرأ المزيد على تريب أدفايزر",
+    "requestCallback": "اطلب مكالمة راجعة",
+    "openMenu": "افتح القائمة",
+    "closeMenu": "أغلق القائمة"
+  },
+  "status": {
+    "loading": "جاري التحميل…",
+    "twentyFourSeven": "على مدار الساعة"
+  }
+}

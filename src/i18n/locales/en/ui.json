@@ -1,0 +1,57 @@
+{
+  "error": {
+    "eyebrow": "Something unexpected",
+    "title": "Let’s try that<br /><span class=\"text-accent\">one more time.</span>",
+    "copy": "The page hit a small bump. Refresh to continue.",
+    "refresh": "Refresh page"
+  },
+  "notFound": {
+    "eyebrow": "404 · Not found",
+    "title": "This room<br /><span class=\"text-accent\">doesn’t exist.</span>",
+    "copy": "The page you’re looking for has checked out. Let’s get you back to Duset Hotel Suites.",
+    "backHome": "Back home"
+  },
+  "cookie": {
+    "title": "We use cookies",
+    "body": "We use cookies to ensure you get the best experience on our website — analytics and preferences stay on your device.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "privacy": "Privacy Policy",
+    "ariaLabel": "Cookie consent banner"
+  },
+  "scrollTop": {
+    "ariaLabel": "Scroll back to top"
+  },
+  "meta": {
+    "home": { "title": "Duset Hotel Suites · The Most Comfortable Stay in Riyadh", "description": "Duset Hotel Suites is located in the heart of Riyadh — 71 luxury rooms with 24hrs service, minutes from Al Nakheel Mall and Riyadh International Exhibition Center. Book now with no prepayment." },
+    "about": { "title": "About Us — Duset Hotel Suites", "description": "Duset Hotel Suites is located in the heart of Riyadh — 71 luxury rooms with 24hrs service, 5.0 rated on Tripadvisor with 2000+ reviews." },
+    "rooms": { "title": "Rooms & Suites — Duset Hotel Suites", "description": "Deluxe Rooms, One Bed Room Apartments and two-bedroom suites — book your room at Duset Hotel Suites with no prepayment." },
+    "roomDetail": { "title": "Rooms & Suites — Duset Hotel Suites", "description": "Explore room details, features and photos at Duset Hotel Suites, Riyadh." },
+    "amenities": { "title": "Amenities — Duset Hotel Suites", "description": "Free WiFi, rooftop pools, 24h in-room dining, fitness zone, free parking and more at Duset Hotel Suites." },
+    "gallery": { "title": "Gallery — Duset Hotel Suites", "description": "Interior and exterior photos of Duset Hotel Suites — lobby, rooms, suites and rooftop in Riyadh." },
+    "attractions": { "title": "Attractions — Duset Hotel Suites", "description": "Malls, markets and landmarks near Duset Hotel Suites — Al Nakheel Mall, Riyadh Exhibition Centre and more, minutes away." },
+    "contact": { "title": "Contact Us — Duset Hotel Suites", "description": "Call 00966112261111, WhatsApp or email duset.hotel{'@'}gmail.com — Duset Hotel Suites, Nuzha District, Riyadh." },
+    "faq": { "title": "FAQ's — Duset Hotel Suites", "description": "Check-in and check-out times, pool, room service, payment methods and policies at Duset Hotel Suites." },
+    "privacyPolicy": { "title": "Privacy Policy — Duset Hotel Suites", "description": "How Duset Hotel Suites collects, uses and protects your personal data." },
+    "refundPolicy": { "title": "Refund Policy — Duset Hotel Suites", "description": "Cancellation and refund terms at Duset Hotel Suites — full refunds up to 48h before check-in." },
+    "terms": { "title": "Terms & Conditions — Duset Hotel Suites", "description": "Booking terms, cancellation policy and site usage for Duset Hotel Suites." },
+    "notFound": { "title": "Page Not Found — Duset Hotel Suites", "description": "The page you are looking for could not be found." },
+    "booking": { "title": "Book Your Stay · Duset Hotel Suites", "description": "Reserve your room at Duset Hotel Suites — no prepayment, instant confirmation." },
+    "confirmation": { "title": "Booking Confirmed · Duset Hotel Suites", "description": "Your reservation at Duset Hotel Suites is confirmed." },
+    "dashboardOverview": { "title": "Dashboard · Duset Hotel Suites", "description": "Your Duset Hotel Suites account — stays, rewards and profile." },
+    "dashboardBookings": { "title": "My Bookings · Duset Hotel Suites", "description": "View and manage your stays at Duset Hotel Suites." },
+    "dashboardBookingDetail": { "title": "Booking Details · Duset Hotel Suites", "description": "Full details of your Duset Hotel Suites reservation." },
+    "dashboardPayments": { "title": "Payment Methods · Duset Hotel Suites", "description": "Manage your saved cards at Duset Hotel Suites." },
+    "dashboardProfile": { "title": "My Profile · Duset Hotel Suites", "description": "Your Duset Hotel Suites profile, preferences and settings." }
+  },
+  "chat": {
+    "openChat": "Chat with Duset Hotel Suites on WhatsApp",
+    "closeChat": "Close chat",
+    "title": "Duset Hotel Suites",
+    "subtitle": "Typically replies in minutes",
+    "greeting": "أهلًا وسهلًا! 👋 Welcome to Duset Hotel Suites. How can we help you today?",
+    "composePlaceholder": "Type a message…",
+    "chips": ["Book a room", "Ask about availability", "Get directions"],
+    "onlineNow": "Online now"
+  }
+}

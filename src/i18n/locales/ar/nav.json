@@ -1,0 +1,24 @@
+{
+  "topBar": {
+    "call": "اتصل بفندق دوست للأجنحة الفندقية",
+    "email": "راسل فندق دوست للأجنحة الفندقية"
+  },
+  "links": {
+    "home": "الرئيسية",
+    "rooms": "الغرف",
+    "amenities": "وسائل الراحة",
+    "gallery": "معرض الصور",
+    "attractions": "المعالم السياحية",
+    "about": "معلومات عنا",
+    "contact": "اتصل بنا",
+    "faq": "الأسئلة الشائعة"
+  },
+  "primaryNav": "التنقل الرئيسي",
+  "mobileNav": "قائمة الجوال",
+  "homeAria": "دوست للأجنحة الفندقية — الرئيسية",
+  "toggleTheme": "تبديل مظهر الموقع",
+  "switchToLight": "التبديل إلى الوضع النهاري",
+  "switchToDark": "التبديل إلى الوضع الليلي",
+  "switchLanguage": "Switch to English",
+  "languageLabel": "English"
+}

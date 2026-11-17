@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Gallery",
+  "title": "Interior &<br /><span class=\"text-accent\">Exterior.</span>",
+  "subline": "A look inside Duset Hotel Suites — from the lobby to the suites and the rooftop.",
+  "ariaCategory": "Gallery categories",
+  "photoAlt": "{category} photo {index}",
+  "photoAltWithCount": "{category} photo {index} of {count}",
+  "openFullscreen": "Open photo {index} in fullscreen",
+  "viewerLabel": "Photo viewer",
+  "close": "Close gallery",
+  "prev": "Previous photo",
+  "next": "Next photo",
+  "categories": {
+    "interior-exterior": "Interior & Exterior",
+    "deluxe-room": "Deluxe Room",
+    "one-bed-room-apartment": "One Bed Room Apartment",
+    "executive-two-bed-room": "Executive Two Bed Room",
+    "deluxe-two-bed-room": "Deluxe Two Bed Room"
+  }
+}

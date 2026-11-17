@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Amenities",
+  "title": "Everything<br /><span class=\"text-accent\">included.</span>",
+  "subline": "From rooftop pools to 24h in-room dining — all amenities are part of your stay at Duset Hotel Suites.",
+  "allIncluded": "All amenities are part of your stay",
+  "items": {
+    "freeWifi": "Free Wifi",
+    "roomService": "Room Service",
+    "dailyHousekeeping": "Daily Housekeeping",
+    "freeParking": "Free Parking",
+    "cableTv": "Cable TV",
+    "bathroom": "Bathroom",
+    "airConditioner": "Air Conditioner",
+    "welcomeDrinks": "Welcome Drinks",
+    "shower": "Shower",
+    "laundry": "Laundry",
+    "refrigerator": "Refrigerator",
+    "microwave": "Microwave",
+    "swimmingPool": "Swimming Pool",
+    "restaurant": "Restaurant",
+    "beds": "Beds",
+    "kingSizedBeds": "King Sized Beds",
+    "iron": "Iron",
+    "guestLaundry": "On Site Guest Laundry",
+    "coffeeTea": "In-Room Coffee and Tea",
+    "coffeeMachine": "Coffee Machine"
+  },
+  "coreIncluded": "Every room includes",
+  "pools": {
+    "title": "Two rooftop pools",
+    "body": "On our 16th floor, with panoramic views over Riyadh — included in your stay.",
+    "cta": "Book a room"
+  }
+}

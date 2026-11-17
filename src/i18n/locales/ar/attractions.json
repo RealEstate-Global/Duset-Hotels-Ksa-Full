@@ -1,0 +1,19 @@
+{
+  "eyebrow": "المعالم السياحية",
+  "title": "معسكر القاعدة المثالي<br /><span class=\"text-accent\">لاستكشاف الرياض.</span>",
+  "subline": "مولات وأسواق ومستشفيات ومركز الرياض الدولي للمعارض — على بُعد دقائق من دوست للأجنحة الفندقية.",
+  "tapToOpen": "اضغط على أي معلم لفتحه في خرائط جوجل. تحتاج اتجاهات من الفندق؟",
+  "getDirections": "احصل على الاتجاهات",
+  "openInMaps": "افتح {name} في خرائط جوجل",
+  "items": {
+    "dumasaqqs": "الدرعية",
+    "cenomiMall": "سينومي مول",
+    "alhammadiHospital": "مستشفى الحمادي",
+    "manuelMarket": "سوق مانويل",
+    "riyadhExhibitionCentre": "مركز الرياض الدولي للمعارض",
+    "tamimmiMarket": "سوق التميمي",
+    "garanadaMall": "غرناطة مول",
+    "panoramaMall": "بانوراما مول",
+    "ministerOfEducation": "وزارة التعليم"
+  }
+}

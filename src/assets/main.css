@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 97%;
+    --foreground: 165 20% 13%;
+    --card: 42 30% 99%;
+    --card-foreground: 165 20% 13%;
+    --popover: 42 30% 99%;
+    --popover-foreground: 165 20% 13%;
+    --primary: 166 26% 15%;
+    --primary-foreground: 42 30% 95%;
+    --secondary: 160 14% 91%;
+    --secondary-foreground: 165 20% 15%;
+    --muted: 160 12% 91%;
+    --muted-foreground: 165 8% 40%;
+    --accent: 158 63% 28%;
+    --accent-foreground: 42 30% 96%;
+    --destructive: 0 63% 48%;
+    --destructive-foreground: 42 30% 96%;
+    --success: 151 38% 34%;
+    --warning: 35 84% 48%;
+    --border: 160 12% 82%;
+    --input: 160 12% 82%;
+    --ring: 158 63% 28%;
+    --radius: 0.75rem;
+    --eyebrow-inverse: 158 55% 68%;
+  }
+
+  .dark {
+    --background: 170 18% 8%;
+    --foreground: 40 25% 93%;
+    --card: 168 16% 12%;
+    --card-foreground: 40 25% 93%;
+    --popover: 168 16% 12%;
+    --popover-foreground: 40 25% 93%;
+    --primary: 42 28% 93%;
+    --primary-foreground: 166 26% 13%;
+    --secondary: 168 12% 17%;
+    --secondary-foreground: 40 25% 93%;
+    --muted: 168 12% 17%;
+    --muted-foreground: 40 10% 66%;
+    --accent: 158 48% 55%;
+    --accent-foreground: 170 18% 8%;
+    --destructive: 0 62% 58%;
+    --destructive-foreground: 42 28% 93%;
+    --success: 151 42% 46%;
+    --warning: 35 84% 58%;
+    --border: 168 12% 24%;
+    --input: 168 12% 24%;
+    --ring: 158 48% 55%;
+    --eyebrow-inverse: 158 60% 27%;
+  }
+
+  * {
+    @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--accent) / 0.62) hsl(var(--secondary) / 0.5);
+  }
+
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: hsl(var(--background));
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  a:active {
+    transform: scale(0.99);
+  }
+
+  select option {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--secondary) / 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid hsl(var(--background));
+    border-radius: 999px;
+    background: hsl(var(--accent) / 0.62);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent));
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-foreground;
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-[1380px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply text-caption font-bold uppercase text-accent;
+    letter-spacing: 0.18em;
+  }
+
+  .eyebrow-inverse {
+    @apply text-caption font-bold uppercase;
+    letter-spacing: 0.18em;
+    color: hsl(var(--eyebrow-inverse));
+  }
+
+  .display-title {
+    @apply font-display font-semibold tracking-[-0.06em];
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-premium;
+  }
+
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    @apply origin-left scale-x-100;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-inverse-accent {
+    color: hsl(var(--eyebrow-inverse));
+  }
+
+  .text-on-dark-accent {
+    color: hsl(158 55% 68%);
+  }
+}
+
+/* Arabic (Cairo) rendering + RTL adjustments */
+html[lang='ar'] body {
+  font-family: 'Cairo', 'Manrope', ui-sans-serif, system-ui, sans-serif;
+}
+
+html[lang='ar'] .font-display {
+  font-family: 'Cairo', 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Arabic script must never be letter-spaced — it breaks letter joining. */
+[dir='rtl'] * {
+  letter-spacing: 0 !important;
+}
+
+/* Mirror directional icons in RTL */
+[dir='rtl'] .icon-flip {
+  transform: scaleX(-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

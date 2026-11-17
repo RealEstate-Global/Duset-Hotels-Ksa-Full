@@ -1,0 +1,105 @@
+{
+  "page": {
+    "eyebrow": "احجز إقامتك",
+    "title": "احجز<br /><span class=\"text-accent\">غرفتك الآن.</span>",
+    "subline": "بدون دفع مسبق — ادفع في الفندق. تأكيد فوري مع تفاصيل حجزك."
+  },
+  "steps": [
+    { "label": "اختر", "detail": "الغرفة والتواريخ" },
+    { "label": "البيانات", "detail": "معلومات الضيف" },
+    { "label": "أكّد", "detail": "راجع واحجز" }
+  ],
+  "room": {
+    "selectRoom": "اختر غرفتك",
+    "perNight": "لكل ليلة",
+    "from": "ابتداءً من",
+    "selected": "تم الاختيار",
+    "viewDetails": "عرض تفاصيل الغرفة",
+    "roomFeatures": "مشمول في كل غرفة"
+  },
+  "dates": {
+    "heading": "التواريخ والضيوف",
+    "checkIn": "تسجيل الوصول",
+    "checkOut": "تسجيل المغادرة",
+    "adults": "بالغون",
+    "children": "أطفال",
+    "nights": "ليالٍ",
+    "night": "ليلة",
+    "selectDates": "اختر تواريخك"
+  },
+  "promo": {
+    "label": "رمز الخصم",
+    "placeholder": "مثال: DUSET10",
+    "apply": "تطبيق",
+    "applied": "تم تطبيق {code} — خصم {percent}٪",
+    "invalid": "هذا الرمز غير موجود. جرّب DUSET10."
+  },
+  "summary": {
+    "heading": "ملخص السعر",
+    "ratePerNight": "{rate} × {nights} {nightsLabel}",
+    "subtotal": "المجموع الفرعي",
+    "discount": "خصم الرمز",
+    "vat": "ضريبة القيمة المضافة (15٪)",
+    "total": "الإجمالي",
+    "payAtHotel": "لا شيء مستحق الآن — ادفع في الفندق",
+    "freeCancellation": "إلغاء مجاني خلال 48 ساعة"
+  },
+  "details": {
+    "heading": "بيانات الضيف",
+    "subline": "سنستخدم هذه البيانات لتأكيد حجزك وتجهيز استقبالك.",
+    "fullName": "الاسم الكامل",
+    "fullNamePlaceholder": "مثال: أحمد القحطاني",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "you{'@'}example.com",
+    "phone": "رقم الهاتف",
+    "phonePlaceholder": "00966 5X XXX XXXX",
+    "arrivalTime": "موعد الوصول المتوقع",
+    "requests": "طلبات خاصة",
+    "requestsPlaceholder": "طابق علوي، غرفة هادئة، دخول مبكر…",
+    "sameAsProfile": "تم ملؤها تلقائيًا من حسابك"
+  },
+  "review": {
+    "heading": "راجع وأكّد",
+    "subline": "كل شيء يبدو صحيحًا؟ أكّد وحجزك مضمون.",
+    "yourRoom": "غرفتك",
+    "guestDetails": "بيانات الضيف",
+    "priceSummary": "ملخص السعر",
+    "editRoom": "تعديل",
+    "editDetails": "تعديل",
+    "terms": "أوافق على",
+    "termsLink": "الشروط والأحكام",
+    "confirmBooking": "تأكيد الحجز",
+    "processing": "جاري التأكيد…"
+  },
+  "errors": {
+    "selectRoom": "يرجى اختيار نوع الغرفة.",
+    "invalidDates": "تاريخ المغادرة يجب أن يكون بعد تاريخ الوصول.",
+    "missingName": "يرجى إدخال اسم الضيف.",
+    "invalidEmail": "هذا البريد غير صحيح.",
+    "missingPhone": "نحتاج رقم هاتف للتواصل معك.",
+    "acceptTerms": "يرجى الموافقة على الشروط لتأكيد حجزك."
+  },
+  "confirmation": {
+    "eyebrow": "اكتمل الحجز",
+    "title": "تم<br /><span class=\"text-accent\">تأكيد حجزك!</span>",
+    "subline": "تم إرسال تأكيد إلى {email} مع كل التفاصيل. بانتظارك بكل سرور.",
+    "refLabel": "رقم الحجز المرجعي",
+    "copied": "تم النسخ إلى الحافظة",
+    "roomLine": "{room} · {nights} {nightsLabel} · {guests} ضيوف",
+    "datesLine": "{checkIn} ← {checkOut}",
+    "totalLine": "الإجمالي (الدفع في الفندق): {total}",
+    "whatNext": "ماذا بعد؟",
+    "step1": "رسالة التأكيد في طريقها إليك مع رقم الحجز.",
+    "step2": "فريقنا يجهّز غرفتك ومشروبات الترحيب.",
+    "step3": "أبرز هويتك في الاستقبال — واستمتع بإقامتك.",
+    "actions": {
+      "viewBooking": "عرض الحجز",
+      "addToCalendar": "أضف إلى التقويم",
+      "bookAnother": "احجز إقامة أخرى",
+      "manageBookings": "حجوزاتي",
+      "backHome": "الرئيسية"
+    },
+    "manageHint": "تريد تحكمًا أكبر؟ سجّل الدخول وشاهد كل إقاماتك في مكان واحد.",
+    "signInCta": "سجّل الدخول إلى لوحة التحكم"
+  }
+}

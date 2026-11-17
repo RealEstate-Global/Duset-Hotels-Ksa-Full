@@ -1,0 +1,33 @@
+{
+  "aboutTitle": "About Our Hotel",
+  "tagline": "Duset Hotel Suites is located in the heart of Riyadh — 71 luxury rooms with 24hrs service, minutes from Al Nakheel Mall and the Riyadh International Exhibition Center.",
+  "explore": "Explore",
+  "exploreLinks": {
+    "rooms": "Rooms & Suites",
+    "amenities": "Amenities",
+    "gallery": "Gallery",
+    "attractions": "Attractions",
+    "about": "About Us",
+    "faq": "FAQ's"
+  },
+  "getInTouch": "Get in touch",
+  "bookYourStay": "Book your stay",
+  "bookHeading": "Reserve online,<br />pay at the hotel.",
+  "bookBody": "No prepayment. Instant confirmation with your booking details.",
+  "newsletterPlaceholder": "Your email for offers",
+  "newsletterLabel": "Your email address",
+  "newsletterSubmit": "Subscribe to newsletter",
+  "newsletterNote": "Occasional offers only. No spam.",
+  "subscribed": "You're on the list. See you soon!",
+  "copyright": "© 2025 Duset Hotel Suites - All Rights Reserved.",
+  "madeWithPride": "Crafted with pride in Riyadh",
+  "poweredBy": "Powered by",
+  "privacyPolicy": "Privacy Policy",
+  "refundPolicy": "Refund Policy",
+  "terms": "Terms & Conditions",
+  "socialFacebook": "Duset Hotel Suites on Facebook",
+  "socialInstagram": "Duset Hotel Suites on Instagram",
+  "socialTripadvisor": "Duset Hotel Suites on Tripadvisor",
+  "socialWhatsapp": "Chat with Duset Hotel Suites on WhatsApp",
+  "socialEmail": "Email Duset Hotel Suites"
+}

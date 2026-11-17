@@ -1,0 +1,61 @@
+{
+  "eyebrow": "Rooms & Suites",
+  "title": "Luxury rooms,<br /><span class=\"text-accent\">made for you.</span>",
+  "pageEyebrow": "Rooms & Suites",
+  "pageTitle": "Choose your<br /><span class=\"text-accent\">room.</span>",
+  "pageSubline": "Four room types, all with free WiFi, 24hrs service, breakfast room service, free parking and equipped kitchens.",
+  "viewAllRooms": "View all rooms",
+  "everyRoomIncludes": "Every room includes",
+  "room": {
+    "backToRooms": "Back to rooms",
+    "overview": "Room Overview",
+    "relaxTitle": "Space to <span class=\"text-accent\">relax.</span>",
+    "features": "Room Features",
+    "reserveThisRoom": "Reserve this room",
+    "bookRoom": "Book {name}",
+    "reserveBody": "Reserve instantly through our booking engine — no prepayment required. Confirmation is sent immediately with your booking details.",
+    "points": [
+      "Best available rate guaranteed",
+      "Free cancellation policy applies",
+      "Pay at the hotel — no prepayment"
+    ],
+    "needHelp": "Need help?",
+    "otherRooms": "Keep exploring",
+    "otherRoomsTitle": "Other<br /><span class=\"text-accent\">rooms.</span>",
+    "viewAria": "View {name}",
+    "seeDetails": "See details of {name}",
+    "showImage": "Show image {index}",
+    "prevImage": "Previous image",
+    "nextImage": "Next image"
+  },
+  "list": {
+    "deluxe-room": {
+      "name": "Deluxe Room",
+      "otherName": "غرفة ديلوكس",
+      "tagline": "King bed · business ready",
+      "description": "Deluxe room, king size bed, 1 bathroom and 2 seats and small table — it is for business guest. A/C, Kitchen, microwave, stove, cupboard.",
+      "tags": ["King Bed", "Business Guest", "Kitchenette"]
+    },
+    "one-bed-room-apartment": {
+      "name": "One Bed Room Apartment",
+      "otherName": "شقة بغرفة نوم واحدة",
+      "tagline": "Bedroom & living room",
+      "description": "Bed room apartment — bed room & living room, bath room, kitchen (fridge, stove, microwave, kettle, etc).",
+      "tags": ["Bedroom + Living Room", "Kitchen", "Family Friendly"]
+    },
+    "executive-two-bed-room": {
+      "name": "Executive Two Bed Room",
+      "otherName": "غرفة تنفيذية بسريرين",
+      "tagline": "Master + twin bed rooms",
+      "description": "Two bed room — master room with king bed separate bathroom & twin bed room with bathroom and living room, equipped kitchen (stove, fridge, microwave, kettle, cutlery, etc).",
+      "tags": ["King + Twin Beds", "Two Bathrooms", "Full Kitchen"]
+    },
+    "deluxe-two-bed-room": {
+      "name": "Deluxe Two Bed Room",
+      "otherName": "غرفة ديلوكس بسريرين",
+      "tagline": "Two rooms · panorama view",
+      "description": "Deluxe two bed room — two separate rooms, two bath rooms, kitchen, master room have king size bed and separate bathroom inside, panorama view.",
+      "tags": ["Panorama View", "Two Bathrooms", "Family Suite"]
+    }
+  }
+}

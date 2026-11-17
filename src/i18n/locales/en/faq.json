@@ -1,0 +1,47 @@
+{
+  "eyebrow": "FAQ's",
+  "title": "Everything you<br /><span class=\"text-accent\">need to know.</span>",
+  "subline": "Check-in, checkout, pools, policies, payments — all in one place.",
+  "items": [
+    {
+      "question": "What is Check in Check Out Time?",
+      "answer": "Check in is at 10 AM, check out is at 12 Noon."
+    },
+    {
+      "question": "Do you allow smoking on property? In the rooms?",
+      "answer": "Our hotel is entirely non-smoking."
+    },
+    {
+      "question": "Do you offer room service? What are the hours?",
+      "answer": "Yes, we offer In Room Dining 24 hours a day, with a limited overnight menu."
+    },
+    {
+      "question": "Do you have a pool?",
+      "answer": "Yes, our two pools are located on our 16th floor rooftop."
+    },
+    {
+      "question": "How do I get to the hotel?",
+      "answer": "Please see our Google Maps page for directions."
+    },
+    {
+      "question": "I booked on a website other than the hotel website and I need to make a change to my reservation. How do I do this?",
+      "answer": "In this situation, you would have to contact the customer service department at the website you used to make your reservation."
+    },
+    {
+      "question": "Will your rooms allow rollaway beds/cribs/playards? Is there a charge?",
+      "answer": "Some of our rooms can accommodate cribs or rollaway beds. There is a per night rental fee for all rollaway beds."
+    },
+    {
+      "question": "Is my ID required at check-in?",
+      "answer": "We do require presentation of a valid government-issued identification at the time of check-in."
+    },
+    {
+      "question": "Can I check in with my debit card?",
+      "answer": "We absolutely take debit cards at check-in."
+    },
+    {
+      "question": "What forms of payment are accepted to pay for my room?",
+      "answer": "All major credit cards are accepted."
+    }
+  ]
+}

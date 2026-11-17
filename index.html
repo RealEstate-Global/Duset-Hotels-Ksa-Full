@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/images/uploads/logos/3203_duset_hotel_suites_logo.webp" />
+    <meta name="theme-color" content="#10231d" />
+    <meta
+      name="description"
+      content="Duset Hotel Suites is located in the heart of Riyadh — 71 luxury rooms with 24hrs service, minutes from Al Nakheel Mall and Riyadh International Exhibition Center. Book now with no prepayment."
+    />
+    <meta property="og:title" content="Duset Hotel Suites | The Most Comfortable Stay in Riyadh" />
+    <meta
+      property="og:description"
+      content="71 luxury rooms with 24hrs service in the heart of Riyadh. Free WiFi, rooftop pools, 24h in-room dining. 5.0 on Tripadvisor with 2000+ reviews."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/uploads/538/3203_458duset_hotel_suites__43_.webp" />
+    <script>
+      ;(function () {
+        try {
+          var storedTheme = window.localStorage.getItem('duset-theme')
+          var dark = storedTheme
+            ? storedTheme === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+          if (dark) document.documentElement.classList.add('dark')
+          var storedLang = window.localStorage.getItem('duset-lang')
+          if (storedLang === 'ar') {
+            document.documentElement.lang = 'ar'
+            document.documentElement.dir = 'rtl'
+          }
+        } catch (e) {
+          /* keep defaults */
+        }
+      })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <title>Duset Hotel Suites | The Most Comfortable Stay in Riyadh</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

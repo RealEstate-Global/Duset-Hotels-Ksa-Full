@@ -1,0 +1,15 @@
+export const ROUTES = {
+  home: '/',
+  about: '/about',
+  rooms: '/rooms',
+  amenities: '/amenities',
+  gallery: '/gallery',
+  attractions: '/attractions',
+  contact: '/contact',
+  faq: '/faq',
+  privacyPolicy: '/privacy-policy',
+  refundPolicy: '/refund-policy',
+  terms: '/terms-and-conditions',
+  booking: '/booking',
+  dashboard: '/dashboard',
+} as const

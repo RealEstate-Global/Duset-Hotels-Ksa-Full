@@ -1,0 +1,105 @@
+{
+  "page": {
+    "eyebrow": "Book Your Stay",
+    "title": "Reserve your<br /><span class=\"text-accent\">room tonight.</span>",
+    "subline": "No prepayment — pay at the hotel. Instant confirmation with your booking details."
+  },
+  "steps": [
+    { "label": "Choose", "detail": "Room & dates" },
+    { "label": "Details", "detail": "Guest info" },
+    { "label": "Confirm", "detail": "Review & book" }
+  ],
+  "room": {
+    "selectRoom": "Select your room",
+    "perNight": "per night",
+    "from": "from",
+    "selected": "Selected",
+    "viewDetails": "View room details",
+    "roomFeatures": "Included in every room"
+  },
+  "dates": {
+    "heading": "Dates & guests",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "adults": "Adults",
+    "children": "Children",
+    "nights": "nights",
+    "night": "night",
+    "selectDates": "Pick your dates"
+  },
+  "promo": {
+    "label": "Promo code",
+    "placeholder": "e.g. DUSET10",
+    "apply": "Apply",
+    "applied": "{code} applied — {percent}% off",
+    "invalid": "That code doesn’t exist. Try DUSET10."
+  },
+  "summary": {
+    "heading": "Price summary",
+    "ratePerNight": "{rate} × {nights} {nightsLabel}",
+    "subtotal": "Subtotal",
+    "discount": "Promo discount",
+    "vat": "VAT (15%)",
+    "total": "Total",
+    "payAtHotel": "Nothing due now — pay at the hotel",
+    "freeCancellation": "Free cancellation within 48h"
+  },
+  "details": {
+    "heading": "Guest details",
+    "subline": "We’ll use this to confirm your reservation and prepare your welcome.",
+    "fullName": "Full name",
+    "fullNamePlaceholder": "e.g. Ahmed Al-Qahtani",
+    "email": "Email address",
+    "emailPlaceholder": "you{'@'}example.com",
+    "phone": "Phone number",
+    "phonePlaceholder": "00966 5X XXX XXXX",
+    "arrivalTime": "Estimated arrival",
+    "requests": "Special requests",
+    "requestsPlaceholder": "High floor, quiet room, early check-in…",
+    "sameAsProfile": "Auto-filled from your account"
+  },
+  "review": {
+    "heading": "Review & confirm",
+    "subline": "Everything look right? Confirm and your room is locked in.",
+    "yourRoom": "Your room",
+    "guestDetails": "Guest details",
+    "priceSummary": "Price summary",
+    "editRoom": "Edit",
+    "editDetails": "Edit",
+    "terms": "I agree to the",
+    "termsLink": "terms & conditions",
+    "confirmBooking": "Confirm Booking",
+    "processing": "Confirming…"
+  },
+  "errors": {
+    "selectRoom": "Please choose a room type.",
+    "invalidDates": "Check-out must be after check-in.",
+    "missingName": "Please tell us the guest name.",
+    "invalidEmail": "That email doesn’t look right.",
+    "missingPhone": "We need a phone number to reach you.",
+    "acceptTerms": "Please accept the terms to confirm your booking."
+  },
+  "confirmation": {
+    "eyebrow": "Reservation Complete",
+    "title": "Booking<br /><span class=\"text-accent\">confirmed!</span>",
+    "subline": "A confirmation was sent to {email} with all the details. We can’t wait to welcome you.",
+    "refLabel": "Booking reference",
+    "copied": "Copied to clipboard",
+    "roomLine": "{room} · {nights} {nightsLabel} · {guests} guests",
+    "datesLine": "{checkIn} → {checkOut}",
+    "totalLine": "Total (pay at hotel): {total}",
+    "whatNext": "What happens next",
+    "step1": "A confirmation email is on its way with your booking reference.",
+    "step2": "Our team prepares your room and welcome drinks.",
+    "step3": "Show your ID at reception — and enjoy.",
+    "actions": {
+      "viewBooking": "View booking",
+      "addToCalendar": "Add to calendar",
+      "bookAnother": "Book another stay",
+      "manageBookings": "My bookings",
+      "backHome": "Back home"
+    },
+    "manageHint": "Want more control? Sign in and see all your stays in one place.",
+    "signInCta": "Sign in to dashboard"
+  }
+}

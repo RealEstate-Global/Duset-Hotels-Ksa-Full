@@ -1,0 +1,25 @@
+{
+  "brand": {
+    "name": "Duset Hotel Suites"
+  },
+  "actions": {
+    "bookNow": "Book Now",
+    "exploreRooms": "Explore Rooms",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "back": "Back",
+    "close": "Close",
+    "send": "Send",
+    "readMore": "Learn more",
+    "getDirections": "Get directions",
+    "openInGoogleMaps": "Open in Google Maps",
+    "readMoreOnTripadvisor": "Read more on Tripadvisor",
+    "requestCallback": "Request a Callback",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "status": {
+    "loading": "Loading…",
+    "twentyFourSeven": "24hrs"
+  }
+}

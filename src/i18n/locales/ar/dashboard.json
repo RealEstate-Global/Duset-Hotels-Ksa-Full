@@ -1,0 +1,170 @@
+{
+  "sidebar": {
+    "main": "القائمة الرئيسية",
+    "account": "الحساب",
+    "overview": "نظرة عامة",
+    "myBookings": "حجوزاتي",
+    "payments": "طرق الدفع",
+    "profile": "ملفي الشخصي",
+    "signOut": "تسجيل الخروج",
+    "viewSite": "العودة إلى الموقع"
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "markAllRead": "تحديد الكل كمقروء",
+    "empty": "لا توجد إشعارات جديدة.",
+    "unread": "{count} غير مقروءة",
+    "bookingConfirmedTitle": "تم تأكيد الحجز",
+    "bookingConfirmedBody": "تم تأكيد إقامتك في دوست للأجنحة الفندقية. نراك قريبًا!",
+    "welcomeTitle": "أهلًا بك في مكافآت دوست",
+    "welcomeBody": "اكسب 50 نقطة عن كل ليلة. 2000 نقطة تفتح مزايا جولد.",
+    "poolTitle": "صيانة مسبح السطح",
+    "poolBody": "يُغلق المسبحان في 5 ديسمبر للتنظيف العميق المجدول. نعتذر عن الإزعاج."
+  },
+  "overview": {
+    "greeting": "أهلًا بعودتك، {name}",
+    "subline": "إليك آخر مستجدات إقاماتك في دوست للأجنحة الفندقية.",
+    "bookRoom": "احجز غرفة",
+    "stats": {
+      "nextStay": "الإقامة القادمة",
+      "nextStayValue": "{days} أيام",
+      "nextStayNone": "—",
+      "nightsBooked": "ليالٍ محجوزة",
+      "nightsBookedValue": "{count}",
+      "points": "نقاط دوست",
+      "pointsValue": "{count}",
+      "tier": "فئة العضوية",
+      "tierGold": "جولد",
+      "tierSilver": "سيلفر",
+      "tierPlatinum": "بلاتينوم"
+    },
+    "nextStay": {
+      "title": "إقامتك القادمة",
+      "manage": "إدارة الحجز",
+      "status": "مؤكد",
+      "noUpcoming": "لا توجد إقامات قادمة",
+      "noUpcomingSub": "احجز إقامتك القادمة في الرياض — الإفطار والمسبح مشمولان.",
+      "bookNow": "احجز الآن"
+    },
+    "recent": {
+      "title": "أحدث الحجوزات",
+      "viewAll": "عرض الكل",
+      "empty": "لا توجد حجوزات بعد"
+    },
+    "quickActions": {
+      "title": "إجراءات سريعة",
+      "bookRoom": "احجز غرفة",
+      "bookRoomSub": "تأكيد فوري",
+      "contact": "خدمة الكونسيرج",
+      "contactSub": "تحدث على واتساب",
+      "amenities": "وسائل الراحة",
+      "amenitiesSub": "مسابح وصالة والمزيد"
+    }
+  },
+  "bookings": {
+    "title": "حجوزاتي",
+    "subline": "كل إقاماتك في مكان واحد — الماضية والحالية والقادمة.",
+    "tabs": {
+      "all": "الكل",
+      "upcoming": "القادمة",
+      "past": "الماضية",
+      "cancelled": "الملغاة"
+    },
+    "status": {
+      "confirmed": "مؤكد",
+      "cancelled": "ملغى"
+    },
+    "card": {
+      "guests": "{count} ضيوف",
+      "nights": "{count} {label}",
+      "view": "عرض التفاصيل",
+      "cancel": "إلغاء",
+      "bookAgain": "احجز مجددًا"
+    },
+    "empty": {
+      "all": "لا توجد حجوزات بعد — ستظهر إقاماتك هنا.",
+      "upcoming": "لا توجد إقامات قادمة.",
+      "past": "لا توجد إقامات سابقة بعد.",
+      "cancelled": "لا توجد حجوزات ملغاة.",
+      "cta": "احجز إقامتك القادمة"
+    },
+    "cancelConfirmTitle": "إلغاء هذا الحجز؟",
+    "cancelConfirmBody": "سيتم إلغاء حجزك وإعادة الغرفة إلى المخزون. لا يمكن التراجع عن هذا الإجراء.",
+    "cancelConfirmLabel": "نعم، إلغاء",
+    "cancelKeep": "الإبقاء على الحجز",
+    "cancelledToast": "تم إلغاء الحجز"
+  },
+  "detail": {
+    "title": "تفاصيل الحجز",
+    "refCopied": "تم نسخ الرقم المرجعي",
+    "guestInfo": "بيانات الضيف",
+    "priceBreakdown": "تفصيل السعر",
+    "yourRoom": "غرفتك",
+    "nights": "{count} ليالٍ",
+    "ratePerNight": "{rate} / ليلة",
+    "vat": "ضريبة القيمة المضافة (15٪)",
+    "discount": "خصم الرمز",
+    "total": "الإجمالي — الدفع في الفندق",
+    "actions": {
+      "cancelBooking": "إلغاء الحجز",
+      "contactHotel": "اتصل بالكونسيرج",
+      "getDirections": "احصل على الاتجاهات",
+      "addToCalendar": "أضف إلى التقويم",
+      "viewInvoice": "تنزيل الملخص"
+    },
+    "cancelledBanner": "هذا الحجز ملغى."
+  },
+  "payments": {
+    "title": "طرق الدفع",
+    "subline": "كيف تدفع — تحقق سريع وآمن في الفندق. لا يتم أي خصم عبر الإنترنت.",
+    "savedCards": "البطاقات المحفوظة",
+    "default": "الافتراضية",
+    "setDefault": "اجعلها الافتراضية",
+    "remove": "حذف",
+    "removeTitle": "حذف هذه البطاقة؟",
+    "removeBody": "ستُحذف البطاقة من حساب دوست. يمكنك إضافتها مجددًا في أي وقت.",
+    "removeLabel": "حذف البطاقة",
+    "removeKeep": "الإبقاء",
+    "removedToast": "تم حذف البطاقة",
+    "defaultUpdatedToast": "تم تحديث البطاقة الافتراضية",
+    "addedToast": "تمت إضافة البطاقة",
+    "addNew": "إضافة بطاقة جديدة",
+    "cardNumber": "رقم البطاقة",
+    "cardNumberPlaceholder": "1234 5678 9012 3456",
+    "nameOnCard": "الاسم على البطاقة",
+    "nameOnCardPlaceholder": "مثال: AHMED AL-QAHTANI",
+    "expiry": "تاريخ الانتهاء",
+    "expiryPlaceholder": "MM / YY",
+    "cvv": "رمز الأمان",
+    "addCard": "إضافة البطاقة",
+    "secureNote": "تُتحقق البطاقات في متصفحك فقط ولا تغادر هذا الجهاز في هذه النسخة التجريبية.",
+    "visa": "فيزا",
+    "mastercard": "ماستركارد"
+  },
+  "profile": {
+    "title": "ملفي الشخصي",
+    "subline": "حافظ على بياناتك محدثة — نستخدمها لتسجيل الوصول والمكافآت.",
+    "personalInfo": "البيانات الشخصية",
+    "name": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "memberSince": "عضو منذ",
+    "save": "حفظ التغييرات",
+    "savedToast": "تم حفظ الملف الشخصي",
+    "preferences": "التفضيلات",
+    "emailOffers": "أرسلوا لي عروضًا حصرية",
+    "emailOffersSub": "بريد واحد أسبوعيًا كحد أقصى. إلغاء الاشتراك في أي وقت.",
+    "smsReminders": "تذكير برسالة قبل تسجيل الوصول",
+    "smsRemindersSub": "تذكير ودّي قبل 24 ساعة من وصولك.",
+    "appearance": "المظهر",
+    "language": "اللغة",
+    "dangerZone": "المنطقة التجريبية",
+    "clearDemoData": "إعادة تعيين البيانات التجريبية",
+    "clearDemoDataSub": "يعيد الحجوزات والبطاقات إلى النسخة الأصلية.",
+    "clearConfirmTitle": "إعادة تعيين البيانات؟",
+    "clearConfirmBody": "ستتم إعادة حجوزاتك وبطاقاتك المخزنة محليًا إلى النسخة الأصلية.",
+    "clearConfirmLabel": "إعادة تعيين",
+    "clearKeep": "الإبقاء",
+    "clearedToast": "تمت إعادة تعيين البيانات"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "eyebrow": "معرض الصور",
+  "title": "من الداخل<br /><span class=\"text-accent\">وإلى الخارج.</span>",
+  "subline": "جولة داخل دوست للأجنحة الفندقية — من اللوبي إلى الأجنحة والسطح.",
+  "ariaCategory": "أقسام المعرض",
+  "photoAlt": "{category} — صورة {index}",
+  "photoAltWithCount": "{category} — صورة {index} من {count}",
+  "openFullscreen": "افتح الصورة {index} بملء الشاشة",
+  "viewerLabel": "عارض الصور",
+  "close": "إغلاق المعرض",
+  "prev": "الصورة السابقة",
+  "next": "الصورة التالية",
+  "categories": {
+    "interior-exterior": "من الداخل والخارج",
+    "deluxe-room": "غرفة ديلوكس",
+    "one-bed-room-apartment": "شقة بغرفة نوم واحدة",
+    "executive-two-bed-room": "غرفة تنفيذية بسريرين",
+    "deluxe-two-bed-room": "غرفة ديلوكس بسريرين"
+  }
+}

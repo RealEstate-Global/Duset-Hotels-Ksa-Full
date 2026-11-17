@@ -1,0 +1,27 @@
+{
+  "eyebrow": "About Us",
+  "title": "Duset<br /><span class=\"text-accent\">Hotel Suites.</span>",
+  "ratingLabel": "{rating} from {reviews} reviews",
+  "findBest": "Find the best hotel for accommodation",
+  "heading": "A better stay<br />starts <span class=\"text-accent\">here.</span>",
+  "copy": "Duset Hotel Suites is located in the heart of Riyadh. The property is close to major shopping destinations in Riyadh: Al Nakheel Mall, Granada Market, Palm Market, Hayat Mall and the surrounding shops with eateries. Riyadh International Exhibition Center is a 5-minute drive away. The nearest airport, King Khalid Airport, is 23 km from the property. We are the providers of 71 luxury rooms with 24hrs service.",
+  "mission": "Our Mission",
+  "missionText": "We always create unforgettable memories with our services to satisfy the needs of our customers throughout the world.",
+  "vision": "Our Vision",
+  "visionText": "We are founded on the vision to create a unique experience for our guests by offering quality service and products, combined with warm and friendly hospitality.",
+  "stats": [
+    { "value": "5.0", "label": "Tripadvisor rating" },
+    { "value": "2000+", "label": "Guest reviews" },
+    { "value": "71", "label": "Luxury rooms" },
+    { "value": "23 km", "label": "To King Khalid Airport" }
+  ],
+  "coreIncluded": "Our Facilities",
+  "coreTitle": "Core features,<br />included.",
+  "coreSubline": "Every stay at Duset Hotel Suites includes these essentials — standard in every room and suite.",
+  "exploreAmenities": "Explore all amenities",
+  "experienceTitle": "Experience Duset Hotel Suites",
+  "experienceCopy": "Book directly with no prepayment — pay at the hotel and enjoy the best available rate.",
+  "exteriorAlt": "Duset Hotel Suites exterior",
+  "facilitiesAlt": "Duset Hotel Suites facilities",
+  "roomsAlt": "Duset Hotel Suites rooms"
+}

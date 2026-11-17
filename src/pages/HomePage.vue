@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, defineAsyncComponent } from 'vue'
 import { ArrowUpRight, BedDouble, Building2, Clock3, Star, Wifi, MapPin } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 import HeroSection from '@/components/sections/HeroSection.vue'
-import RoomsSection from '@/components/sections/RoomsSection.vue'
-import ServicesSection from '@/components/sections/ServicesSection.vue'
-import FacilitiesSection from '@/components/sections/FacilitiesSection.vue'
-import HowItWorksSection from '@/components/sections/HowItWorksSection.vue'
-import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
-import FaqSection from '@/components/sections/FaqSection.vue'
-import AttractionsGrid from '@/components/sections/AttractionsGrid.vue'
+
+// Below-the-fold sections are code-split out of the initial bundle to keep
+// the critical path (hero + booking bar) light. They load right after mount.
+const RoomsSection = defineAsyncComponent(() => import('@/components/sections/RoomsSection.vue'))
+const ServicesSection = defineAsyncComponent(() => import('@/components/sections/ServicesSection.vue'))
+const FacilitiesSection = defineAsyncComponent(() => import('@/components/sections/FacilitiesSection.vue'))
+const HowItWorksSection = defineAsyncComponent(() => import('@/components/sections/HowItWorksSection.vue'))
+const TestimonialsSection = defineAsyncComponent(() => import('@/components/sections/TestimonialsSection.vue'))
+const FaqSection = defineAsyncComponent(() => import('@/components/sections/FaqSection.vue'))
+const AttractionsGrid = defineAsyncComponent(() => import('@/components/sections/AttractionsGrid.vue'))
 
 const { t, tm } = useI18n()
 

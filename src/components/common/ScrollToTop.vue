@@ -11,14 +11,36 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 
 const visible = ref(false)
 const progress = ref(0)
+const maxScroll = ref(0)
 
 const strokeDashOffset = computed(() => CIRCUMFERENCE * (1 - progress.value))
 
-const onScroll = () => {
+const measureMaxScroll = () => {
   const doc = document.documentElement
-  const max = doc.scrollHeight - doc.clientHeight
+  maxScroll.value = Math.max(0, doc.scrollHeight - doc.clientHeight)
+}
+
+// Only cheap reads (scrollY) happen per scroll frame; the layout-affecting
+// scrollHeight read is cached and refreshed on resize/after mount.
+const update = () => {
+  const max = maxScroll.value
   progress.value = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0
   visible.value = window.scrollY > SHOW_AFTER_PX
+}
+
+let ticking = false
+const onScroll = () => {
+  if (ticking) return
+  ticking = true
+  window.requestAnimationFrame(() => {
+    ticking = false
+    update()
+  })
+}
+
+const onResize = () => {
+  measureMaxScroll()
+  update()
 }
 
 const toTop = () => {
@@ -26,14 +48,18 @@ const toTop = () => {
 }
 
 onMounted(() => {
-  onScroll()
+  // Defer the layout-affecting measurement out of the initial mount task.
+  window.requestAnimationFrame(() => {
+    measureMaxScroll()
+    update()
+  })
   window.addEventListener('scroll', onScroll, { passive: true })
-  window.addEventListener('resize', onScroll, { passive: true })
+  window.addEventListener('resize', onResize, { passive: true })
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
-  window.removeEventListener('resize', onScroll)
+  window.removeEventListener('resize', onResize)
 })
 </script>
 

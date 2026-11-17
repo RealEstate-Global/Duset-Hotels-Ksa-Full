@@ -69,7 +69,6 @@
   }
 
   html {
-    scroll-behavior: smooth;
     background-color: hsl(var(--background));
   }
 
